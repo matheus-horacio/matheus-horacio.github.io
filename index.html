@@ -8,7 +8,6 @@
   <link rel="canonical" href="https://www.matheushoracio.com.br/">
   <link rel="icon" href="favicon.jpg" type="image/x-icon">
 
-  <!-- Dados estruturados (para Knowledge Panel) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -16,7 +15,7 @@
     "name": "Matheus Horácio",
     "alternateName": "Matheus Horacio",
     "jobTitle": "Content & Marketing Strategist",
-    "description": "Content and marketing strategist passionate about building communities and leading with purpose. As Content Manager for The Chosen in Brazil, I’ve helped grow our social media audience to over 3 million followers by combining data-driven campaigns, creative storytelling and a deep understanding of what truly engages people.",
+    "description": "Content and marketing strategist passionate about building communities and leading with purpose. As Content Manager for The Chosen in Brazil, I've helped grow our social media audience to over 3 million followers by combining data-driven campaigns, creative storytelling and a deep understanding of what truly engages people.",
     "url": "https://www.matheushoracio.com.br/",
     "image": "https://www.matheushoracio.com.br/matheus-horacio.jpg",
     "worksFor": {
@@ -35,103 +34,483 @@
   }
   </script>
 
-  <!-- Estilo -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
       --teal: #01b8af;
-      --bg: #f7f9fa;
-      --text: #1e293b;
-      --muted: #64748b;
+      --teal-dark: #00a59d;
+      --bg: #0a0e27;
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --card: rgba(15, 23, 42, 0.6);
+      --accent: #3b82f6;
     }
+
     body {
-      margin: 0;
       background: var(--bg);
       font-family: "Inter", sans-serif;
       color: var(--text);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animated gradient background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+    }
+
+    .bg-gradient::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(1, 184, 175, 0.15) 0%, transparent 50%);
+      animation: rotate 20s linear infinite;
+    }
+
+    .bg-gradient::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(1, 184, 175, 0.1) 0%, transparent 50%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Floating particles */
+    .particle {
+      position: fixed;
+      width: 3px;
+      height: 3px;
+      background: rgba(1, 184, 175, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       padding: 40px 20px;
     }
+
     main {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      padding: 60px 40px;
-      max-width: 720px;
-      text-align: center;
+      background: var(--card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 32px;
+      padding: 80px 60px;
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      animation: fadeInUp 1s ease-out;
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Glowing border effect */
+    main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 32px;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--teal), var(--accent), var(--teal));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.3;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
+    .profile-section {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .img-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    .img-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(135deg, var(--teal), var(--accent));
+      border-radius: 50%;
+      z-index: -1;
+      animation: rotate 8s linear infinite;
+    }
+
     img {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 4px solid var(--bg);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
     }
+
+    .img-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, var(--teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeIn 1s ease-out 0.2s both;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-out 0.3s both;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
     p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--text);
-      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 24px;
+      animation: fadeIn 1s ease-out 0.4s both;
     }
-    .highlight { color: var(--teal); font-weight: 600; }
+
+    .highlight {
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .highlight:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+      animation: fadeIn 1s ease-out 0.5s both;
+    }
+
+    .stat-card {
+      background: rgba(1, 184, 175, 0.1);
+      border: 1px solid rgba(1, 184, 175, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      background: rgba(1, 184, 175, 0.15);
+      box-shadow: 0 10px 30px rgba(1, 184, 175, 0.2);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
     .cta {
-      margin-top: 30px;
+      margin-top: 50px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 16px;
+      animation: fadeIn 1s ease-out 0.6s both;
     }
+
     .btn {
-      padding: 10px 22px;
-      border-radius: 40px;
-      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
       font-weight: 600;
-      transition: 0.2s;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn span {
+      position: relative;
+      z-index: 1;
+    }
+
     .btn-primary {
-      background: var(--teal);
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
       color: white;
-      box-shadow: 0 4px 12px rgba(1,184,175,0.25);
+      box-shadow: 0 10px 30px rgba(1, 184, 175, 0.3);
     }
-    .btn-primary:hover { background: #00998f; }
+
+    .btn-primary:hover {
+      box-shadow: 0 15px 40px rgba(1, 184, 175, 0.4);
+      transform: translateY(-2px);
+    }
+
     .btn-outline {
-      border: 1px solid #e2e8f0;
+      border: 2px solid rgba(255, 255, 255, 0.2);
       color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
     }
+
+    .btn-outline:hover {
+      border-color: var(--teal);
+      background: rgba(1, 184, 175, 0.1);
+      transform: translateY(-2px);
+    }
+
     footer {
-      font-size: 0.85rem;
+      text-align: center;
+      font-size: 0.9rem;
       color: var(--muted);
-      margin-top: 40px;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1s ease-out 0.7s both;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 60px 30px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <img src="matheus-horacio.jpg" alt="Matheus Horácio">
-    <h1>Olá! Sou Matheus Horácio 👋</h1>
-    <p>
-      <strong>Content & Marketing Strategist</strong> apaixonado por construir comunidades e liderar com propósito.<br>
-      Como gestor de conteúdo de <span class="highlight">The Chosen Brasil</span>, ajudei a série a alcançar mais de 3 milhões de seguidores, unindo campanhas orientadas por dados, storytelling criativo e uma compreensão profunda do que realmente conecta as pessoas.
-    </p>
-    <p>
-      Tenho experiência em estratégia multicanal, liderança de equipe e criação de conteúdo — transformando visão em execução e engajamento em conexão duradoura.<br><br>
-      📅 Minha agenda está aberta para <strong>palestras, eventos e colaborações.</strong>
-    </p>
-    <div class="cta">
-      <a class="btn btn-primary" href="mailto:mateus@thechosen.tv">Entrar em contato</a>
-      <a class="btn btn-outline" href="https://www.linkedin.com/in/matheushoracio/" target="_blank">LinkedIn</a>
-      <a class="btn btn-outline" href="https://www.instagram.com/matheus.horacio/" target="_blank">Instagram</a>
-    </div>
-    <footer>© 2025 Matheus Horácio — Todos os direitos reservados</footer>
-  </main>
+  <div class="bg-gradient"></div>
+
+  <div class="container">
+    <main>
+      <div class="profile-section">
+        <div class="img-wrapper">
+          <img src="matheus-horacio.jpg" alt="Matheus Horácio">
+        </div>
+        <h1>Matheus Horácio</h1>
+        <div class="subtitle">Content & Marketing Strategist</div>
+      </div>
+
+      <div class="content">
+        <p>Apaixonado por <strong>construir comunidades</strong> e liderar com propósito, transformo visão em execução e engajamento em conexão duradoura.</p>
+
+        <p>Como gestor de conteúdo de <a href="https://osescolhidos.tv/" class="highlight" target="_blank">The Chosen Brasil</a>, ajudei a série a alcançar resultados extraordinários, unindo campanhas orientadas por dados, storytelling criativo e uma compreensão profunda do que realmente conecta as pessoas.</p>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-number">3M+</div>
+            <div class="stat-label">Seguidores Alcançados</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Estratégias Criativas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Dedicação</div>
+          </div>
+        </div>
+
+        <p>Especializado em <strong>estratégia multicanal</strong>, <strong>liderança de equipe</strong> e <strong>criação de conteúdo</strong> que gera impacto real.</p>
+
+        <p>📅 Minha agenda está aberta para <strong>palestras, eventos e colaborações.</strong></p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:mateus@thechosen.tv">
+            <span>✉ Entrar em contato</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/matheushoracio/" target="_blank">
+            <span>LinkedIn</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.instagram.com/matheus.horacio/" target="_blank">
+            <span>Instagram</span>
+          </a>
+        </div>
+
+        <footer>© 2025 Matheus Horácio — Todos os direitos reservados</footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Criar partículas flutuantes
+    function createParticles() {
+      const particleCount = 30;
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        document.body.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    // Efeito parallax suave no mouse
+    document.addEventListener('mousemove', (e) => {
+      const cards = document.querySelectorAll('.stat-card');
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      
+      cards.forEach((card, index) => {
+        const speed = (index + 1) * 0.5;
+        card.style.transform = `translateX(${x * speed}px) translateY(${y * speed}px)`;
+      });
+    });
+  </script>
 </body>
 </html>
