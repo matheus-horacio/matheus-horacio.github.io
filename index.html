@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.png" type="image/x-icon">
 
   <!-- ========================================
-       SCHEMA.ORG (SEO / KNOWLEDGE PANEL)
+       SCHEMA.ORG (PARA SEO E GOOGLE)
   ========================================= -->
   <script type="application/ld+json">
   {
@@ -17,73 +17,52 @@
     "@type": "Person",
     "name": "Matheus Horácio",
     "jobTitle": "Content & Marketing Strategist",
-    "description": "Gestor de Conteúdo do The Chosen Brasil. +3M de seguidores alcançados.",
+    "description": "Gestor de Conteúdo do The Chosen Brasil, responsável por uma comunidade de mais de 3 milhões de seguidores.",
     "url": "https://www.matheushoracio.com.br/",
     "image": "https://www.matheushoracio.com.br/matheus-horacio.jpg",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "The Chosen Brasil",
-      "url": "https://osescolhidos.tv/"
-    },
+    "worksFor": { "@type": "Organization", "name": "The Chosen Brasil", "url": "https://osescolhidos.tv/" },
     "sameAs": [
-      "https://www.wikidata.org/wiki/Q136735831",
       "https://www.linkedin.com/in/matheushoracio/",
       "https://www.instagram.com/matheus.horacio/"
     ],
-    "email": "mailto:matheus@thechosen.tv",
-    "subjectOf": [
-      {
-        "@type": "VideoObject",
-        "name": "Live com Dallas Jenkins",
-        "contentUrl": "https://www.youtube.com/live/VSACOxcCFQ0?t=1747"
-      },
-      {
-        "@type": "VideoObject",
-        "name": "Encontro com elenco",
-        "contentUrl": "https://www.instagram.com/reels/C5HRSi4qpP2/"
-      }
-    ],
-    "performerIn": [
-      {"@type": "VideoObject", "url": "https://www.youtube.com/watch?v=3IoYs_j27lc"},
-      {"@type": "VideoObject", "url": "https://www.youtube.com/watch?v=SnhONwzBzQs"}
-    ]
+    "email": "mailto:matheus@thechosen.tv"
   }
   </script>
 
   <!-- ========================================
-       FONTES GOOGLE
+       FONTES (GOOGLE FONTS)
   ========================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
     /* ========================================
-       RESET & VARIÁVEIS
+       CONFIGURAÇÕES GLOBAIS & CORES
     ========================================= */
+    :root {
+      /* CORES FINAIS - BRAND GUIDE THE CHOSEN */
+      --navy: #1b3a52;           /* Azul Navy principal */
+      --navy-dark: #0f2536;      /* Azul mais escuro */
+      --teal: #3d5e6f;           /* Tom de Azul Petróleo/Teal */
+      --sand: #baa989;           /* Bege Areia */
+      --cream: #f0ebe1;          /* Creme */
+      --text-dark: #2a2520;      /* Cor de texto principal */
+      --text-gray: #6a5f54;      /* Cor de texto secundário */
+      --bg-light: #f8f6f2;       /* Fundo geral claro */
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    :root {
-      /* CORES OFICIAIS THE CHOSEN (brand guide) */
-      --primary-dark: #0d1f2d;      /* Azul escuro principal */
-      --secondary-blue: #1a3d5c;    /* Azul médio */
-      --teal-accent: #4a7c8e;       /* Teal/petróleo */
-      --warm-beige: #c5b8a0;        /* Bege quente */
-      --light-cream: #ede8dc;       /* Creme claro */
-      --text-dark: #2a2520;         /* Texto principal */
-      --text-gray: #6a5f54;         /* Texto secundário */
-      --bg-light: #f8f6f2;          /* Fundo claro */
-    }
-
     body {
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Lato', sans-serif;
       color: var(--text-dark);
       background: var(--bg-light);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
@@ -91,37 +70,49 @@
        TIPOGRAFIA
     ========================================= */
     h1, h2, h3 {
-      font-family: "Crimson Text", serif;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
       line-height: 1.2;
     }
 
-    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-    h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+    h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
     h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
-
-    p {
-      font-size: 1.0625rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    a {
-      color: var(--teal-accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--secondary-blue);
-    }
+    p { font-size: 1.0625rem; margin-bottom: 1.5rem; }
 
     /* ========================================
-       BOTÕES
+       COMPONENTES REUTILIZÁVEIS
     ========================================= */
+    .section {
+      padding: 80px 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .section-header h2 {
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--text-gray);
+    }
+    
     .btn {
       padding: 16px 36px;
       border-radius: 4px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.9375rem;
       text-decoration: none;
       display: inline-flex;
@@ -130,17 +121,19 @@
       cursor: pointer;
       border: none;
       transition: all 0.3s ease;
-      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .btn-primary {
-      background: var(--warm-beige);
-      color: var(--primary-dark);
+      background: var(--sand);
+      color: var(--navy-dark);
     }
 
     .btn-primary:hover {
-      background: #b3a689;
+      background: #a8987a;
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .btn-outline {
@@ -155,15 +148,26 @@
       transform: translateY(-2px);
     }
 
+    /* Animação de Scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ========================================
        SEÇÃO: HERO
     ========================================= */
     .hero {
       min-height: 85vh;
-      background: linear-gradient(180deg, var(--primary-dark) 0%, var(--secondary-blue) 100%);
+      background: linear-gradient(170deg, var(--navy-dark) 0%, var(--navy) 100%);
       display: flex;
       align-items: center;
-      justify-content: center;
       padding: 80px 24px;
       color: white;
       position: relative;
@@ -177,14 +181,13 @@
       right: 0;
       height: 80px;
       background: linear-gradient(to bottom, transparent, var(--bg-light));
+      z-index: 1;
     }
 
     .hero-content {
-      max-width: 1100px;
-      width: 100%;
       display: grid;
       grid-template-columns: 1.3fr 1fr;
-      gap: 60px;
+      gap: 50px;
       align-items: center;
       position: relative;
       z-index: 2;
@@ -192,9 +195,10 @@
 
     .hero-text .subtitle {
       font-size: 1.25rem;
-      color: var(--warm-beige);
+      color: var(--sand);
       margin-bottom: 12px;
-      font-weight: 600;
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
     }
 
     .hero-text .tagline {
@@ -212,30 +216,24 @@
       height: 240px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--warm-beige);
+      border: 4px solid var(--sand);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-      transition: transform 0.4s ease;
-    }
-
-    .hero-image img:hover {
-      transform: scale(1.05);
     }
 
     .badge-stats {
       margin-top: 24px;
       display: inline-block;
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
       padding: 14px 24px;
       border-radius: 6px;
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .badge-stats .number {
-      font-family: "Crimson Text", serif;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.75rem;
       font-weight: 700;
-      color: var(--warm-beige);
+      color: var(--sand);
       display: block;
     }
 
@@ -253,71 +251,46 @@
       flex-wrap: wrap;
       margin-top: 32px;
     }
-
+    
     /* ========================================
        SEÇÃO: SOBRE
     ========================================= */
     .about {
-      padding: 80px 24px;
       background: var(--light-cream);
     }
 
-    .about-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .about h2 {
-      text-align: center;
-      color: var(--secondary-blue);
-      margin-bottom: 32px;
-    }
+    .about p { color: var(--text-gray); }
+    .about h2 { color: var(--navy); }
 
     .highlight-box {
       background: white;
-      border-left: 4px solid var(--teal-accent);
+      border-left: 4px solid var(--teal);
       padding: 28px 36px;
       border-radius: 4px;
       margin: 32px 0;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     }
 
     .highlight-box p {
-      font-size: 1.25rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.375rem;
       font-style: italic;
       color: var(--text-dark);
       margin: 0;
     }
-
+    
     /* ========================================
        SEÇÃO: JORNADA (TIMELINE)
     ========================================= */
     .journey {
-      padding: 80px 24px;
       background: white;
     }
 
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 60px;
-    }
-
-    .section-header h2 {
-      color: var(--secondary-blue);
-      margin-bottom: 16px;
-    }
-
-    .section-header p {
-      font-size: 1.125rem;
-      color: var(--text-gray);
-    }
-
     .timeline {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       position: relative;
-      padding-left: 60px;
+      padding-left: 50px;
     }
 
     .timeline::before {
@@ -326,125 +299,89 @@
       left: 20px;
       top: 0;
       bottom: 0;
-      width: 3px;
-      background: var(--teal-accent);
+      width: 2px;
+      background: var(--teal);
     }
 
     .timeline-item {
       position: relative;
       margin-bottom: 50px;
-      padding-left: 40px;
+      padding-left: 30px;
     }
 
     .timeline-marker {
       position: absolute;
-      left: -49px;
+      left: -40px;
       top: 8px;
-      width: 16px;
-      height: 16px;
-      background: var(--warm-beige);
-      border: 4px solid white;
+      width: 14px;
+      height: 14px;
+      background: var(--sand);
+      border: 3px solid white;
       border-radius: 50%;
-      box-shadow: 0 0 0 3px var(--teal-accent);
+      box-shadow: 0 0 0 2px var(--teal);
       z-index: 2;
     }
 
     .timeline-year {
       display: inline-block;
-      background: var(--secondary-blue);
+      background: var(--navy);
       color: white;
       padding: 6px 14px;
       border-radius: 4px;
       font-weight: 700;
       font-size: 0.8125rem;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
 
-    .timeline-content h3 {
-      color: var(--text-dark);
-      margin-bottom: 12px;
-    }
-
-    .timeline-content p {
-      color: var(--text-gray);
-      margin: 0;
-    }
+    .timeline-content p { color: var(--text-gray); }
 
     /* ========================================
        SEÇÃO: ESTATÍSTICAS
     ========================================= */
     .stats {
       background: var(--secondary-blue);
-      padding: 60px 24px;
     }
 
     .stats-grid {
-      max-width: 1100px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
       text-align: center;
     }
 
-    .stat-item {
-      color: white;
-    }
-
-    .stat-item h3 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--warm-beige);
-      margin-bottom: 8px;
-    }
-
-    .stat-item p {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    .stat-item h3 { color: var(--sand); }
+    .stat-item p { color: rgba(255, 255, 255, 0.8); }
 
     /* ========================================
        SEÇÃO: CARROSSEL DE FOTOS
     ========================================= */
-    .gallery {
-      padding: 80px 24px;
-      background: white;
-    }
+    .gallery { background: white; }
 
-    .carousel-container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .carousel-container { max-width: 1000px; }
 
     .carousel {
       position: relative;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
-    .carousel-track {
-      display: flex;
-    }
+    .carousel-track { display: flex; }
 
     .carousel-slide {
       min-width: 100%;
       display: none;
     }
 
-    .carousel-slide.active {
-      display: block;
-    }
+    .carousel-slide.active { display: block; }
 
     .carousel-slide img {
       width: 100%;
-      height: 500px;
+      aspect-ratio: 16 / 9; /* PROPORÇÃO OTIMIZADA */
       object-fit: cover;
       display: block;
+      background-color: var(--light-cream); /* Cor de fundo enquanto carrega */
     }
 
     .carousel-caption {
@@ -452,8 +389,8 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(13, 31, 45, 0.95), transparent);
-      padding: 28px 32px;
+      background: linear-gradient(to top, rgba(13, 31, 45, 0.9), transparent);
+      padding: 24px 28px;
       color: white;
     }
 
@@ -462,43 +399,24 @@
       margin: 0;
       text-align: center;
       font-weight: 600;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* Botões navegação */
     .carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(13, 31, 45, 0.8);
-      backdrop-filter: blur(8px);
-      border: none;
-      width: 45px;
-      height: 45px;
+      background: rgba(13, 31, 45, 0.75);
+      border: 1px solid rgba(255,255,255,0.2);
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
-      transition: all 0.3s ease;
       z-index: 10;
     }
-
-    .carousel-btn:hover {
-      background: var(--secondary-blue);
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .carousel-btn svg {
-      width: 24px;
-      height: 24px;
-      fill: white;
-    }
-
+    .carousel-btn svg { fill: white; }
     .carousel-btn.prev { left: 16px; }
     .carousel-btn.next { right: 16px; }
 
-    /* Dots */
     .carousel-dots {
       display: flex;
       justify-content: center;
@@ -511,205 +429,89 @@
       height: 10px;
       border-radius: 50%;
       background: var(--light-cream);
-      border: 2px solid var(--teal-accent);
+      border: 2px solid var(--teal);
       cursor: pointer;
-      transition: all 0.3s ease;
     }
-
-    .carousel-dot.active {
-      background: var(--warm-beige);
-      transform: scale(1.3);
-    }
+    .carousel-dot.active { background: var(--sand); }
 
     /* ========================================
        SEÇÃO: ENTREVISTAS
     ========================================= */
-    .interviews {
-      background: var(--light-cream);
-      padding: 80px 24px;
-    }
+    .interviews { background: var(--light-cream); }
 
-    .featured-videos {
-      max-width: 1100px;
-      margin: 0 auto 50px;
+    .featured-videos, .videos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 32px;
+      gap: 28px;
     }
 
-    .featured-card {
+    .featured-videos { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); margin-bottom: 40px; }
+    .videos-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+    .video-card {
       background: white;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
       display: block;
+      text-decoration: none;
     }
+    .video-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
 
-    .featured-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-    }
-
-    .featured-thumbnail {
+    .video-thumbnail {
       position: relative;
       padding-bottom: 56.25%;
-      background: var(--primary-dark);
-      overflow: hidden;
+      background: var(--navy);
     }
-
-    .featured-thumbnail img {
+    .video-thumbnail img {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
     }
-
-    .featured-card:hover .featured-thumbnail img {
-      transform: scale(1.05);
-    }
-
+    
     .play-overlay {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 70px;
-      height: 70px;
-      background: rgba(13, 31, 45, 0.9);
+      width: 60px; height: 60px;
+      background: rgba(13, 31, 45, 0.85);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s ease;
     }
-
-    .featured-card:hover .play-overlay {
-      background: var(--teal-accent);
-      transform: translate(-50%, -50%) scale(1.12);
-    }
-
-    .play-overlay svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-      margin-left: 3px;
-    }
-
-    .featured-info {
-      padding: 24px;
-    }
-
+    .video-card:hover .play-overlay { background: var(--teal); }
+    .play-overlay svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+    
+    .video-info { padding: 20px; }
+    .featured-card .video-info { padding: 24px; }
+    .featured-card .play-overlay { width: 70px; height: 70px; }
+    
     .featured-badge {
       display: inline-block;
-      background: var(--secondary-blue);
+      background: var(--navy);
       color: white;
       padding: 5px 12px;
       border-radius: 4px;
-      font-size: 0.6875rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
     }
 
-    .featured-info h3 {
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      font-size: 1.375rem;
-    }
-
-    .featured-info p {
-      color: var(--text-gray);
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* Vídeos menores */
-    .videos-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
-
-    .video-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
-      display: block;
-    }
-
-    .video-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .video-thumbnail {
-      position: relative;
-      padding-bottom: 56.25%;
-      background: var(--primary-dark);
-      overflow: hidden;
-    }
-
-    .video-thumbnail img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .video-card:hover .video-thumbnail img {
-      transform: scale(1.05);
-    }
-
-    .video-card .play-overlay {
-      width: 60px;
-      height: 60px;
-    }
-
-    .video-card .play-overlay svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .video-info {
-      padding: 20px;
-    }
-
-    .video-info h3 {
-      font-size: 1.125rem;
-      color: var(--text-dark);
-      margin-bottom: 6px;
-    }
-
-    .video-info p {
-      color: var(--text-gray);
-      font-size: 0.875rem;
-      line-height: 1.5;
-      margin: 0;
-    }
+    .video-info h3 { color: var(--text-dark); margin-bottom: 8px; }
+    .video-info p { color: var(--text-gray); font-size: 0.9375rem; margin: 0; }
+    .featured-card h3 { font-size: 1.375rem; }
+    .featured-card p { font-size: 1rem; }
 
     /* ========================================
        SEÇÃO: APARIÇÕES
     ========================================= */
-    .appearances {
-      background: white;
-      padding: 80px 24px;
-    }
+    .appearances { background: white; }
 
     .appearances-list {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       display: grid;
       gap: 14px;
@@ -719,98 +521,35 @@
       background: var(--light-cream);
       padding: 20px 28px;
       border-radius: 6px;
-      border-left: 4px solid var(--teal-accent);
+      border-left: 4px solid var(--teal);
       display: flex;
       align-items: center;
       gap: 18px;
-      transition: all 0.3s ease;
     }
-
-    .appearance-item:hover {
-      border-left-color: var(--warm-beige);
-      transform: translateX(6px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    }
-
     .appearance-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--teal-accent);
+      width: 44px; height: 44px;
+      background: var(--teal);
       border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-
-    .appearance-icon svg {
-      width: 22px;
-      height: 22px;
-      fill: white;
-    }
-
-    .appearance-info {
-      flex: 1;
-    }
-
-    .appearance-info h4 {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-
-    .appearance-info p {
-      color: var(--text-gray);
-      font-size: 0.8125rem;
-      margin: 0;
-    }
-
-    .appearance-link {
-      color: var(--teal-accent);
-      font-weight: 600;
-      font-size: 0.8125rem;
-      transition: color 0.3s ease;
-    }
-
-    .appearance-link:hover {
-      color: var(--secondary-blue);
-    }
+    .appearance-icon svg { width: 22px; height: 22px; fill: white; }
+    .appearance-info h4 { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+    .appearance-info p { font-size: 0.8125rem; margin: 0; }
+    .appearance-link { margin-left: auto; white-space: nowrap; }
 
     /* ========================================
-       SEÇÃO: CTA FINAL
+       SEÇÃO: CTA FINAL & FOOTER
     ========================================= */
     .cta-final {
       background: var(--secondary-blue);
-      padding: 80px 24px;
       text-align: center;
       color: white;
     }
+    .cta-final h2 { color: var(--sand); margin-bottom: 20px; }
+    .cta-final p { color: rgba(255, 255, 255, 0.85); max-width: 700px; margin: 0 auto 40px; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-    .cta-final h2 {
-      color: var(--warm-beige);
-      margin-bottom: 20px;
-    }
-
-    .cta-final p {
-      font-size: 1.125rem;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    /* ========================================
-       FOOTER
-    ========================================= */
     footer {
       background: var(--primary-dark);
       color: rgba(255, 255, 255, 0.65);
@@ -818,94 +557,28 @@
       padding: 36px 24px;
       font-size: 0.875rem;
     }
-
-    footer a {
-      color: var(--warm-beige);
-    }
-
-    footer a:hover {
-      color: white;
-    }
+    footer a { color: var(--sand); }
+    footer a:hover { color: white; }
 
     /* ========================================
        RESPONSIVIDADE
     ========================================= */
     @media (max-width: 968px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        gap: 50px;
-        text-align: center;
-      }
-
-      .cta-group {
-        justify-content: center;
-      }
-
-      .hero-image img {
-        width: 200px;
-        height: 200px;
-      }
-
-      .timeline {
-        padding-left: 0;
-      }
-
-      .timeline::before {
-        left: 20px;
-      }
-
-      .timeline-item {
-        padding-left: 60px;
-      }
-
-      .timeline-marker {
-        left: 11px;
-      }
-
-      .featured-videos {
-        grid-template-columns: 1fr;
-      }
-
-      .videos-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .carousel-slide img {
-        height: 350px;
-      }
+      .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .cta-group { justify-content: center; }
+      .hero-image img { width: 200px; height: 200px; }
+      .timeline { padding-left: 0; }
+      .timeline::before { left: 10px; }
+      .timeline-item { padding-left: 40px; }
+      .timeline-marker { left: 3px; }
+      .featured-videos { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      .hero {
-        padding: 60px 20px;
-      }
-
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .carousel-slide img {
-        height: 280px;
-      }
-
-      .carousel-btn {
-        width: 38px;
-        height: 38px;
-      }
-
-      .carousel-btn.prev {
-        left: 10px;
-      }
-
-      .carousel-btn.next {
-        right: 10px;
-      }
-
-      .appearance-item {
-        flex-direction: column;
-        text-align: center;
-      }
+      .btn { width: 100%; justify-content: center; }
+      .carousel-slide img { aspect-ratio: 4 / 3; }
+      .appearance-item { flex-direction: column; text-align: center; gap: 12px; }
+      .appearance-link { margin-left: 0; margin-top: 8px; }
     }
   </style>
 </head>
@@ -913,33 +586,27 @@
 <body>
 
   <!-- ========================================
-       SEÇÃO: HERO (APRESENTAÇÃO)
+       SEÇÃO: HERO (APRESENTAÇÃO INICIAL)
   ========================================= -->
-  <section class="hero">
-    <div class="hero-content">
+  <header class="hero section">
+    <div class="container hero-content">
       
-      <!-- TEXTO -->
-      <div class="hero-text">
+      <!-- TEXTO DE APRESENTAÇÃO -->
+      <div class="hero-text fade-in">
         <h1>Matheus Horácio</h1>
-        <div class="subtitle">Content & Marketing Strategist</div>
+        <p class="subtitle">Content & Marketing Strategist</p>
         <p class="tagline">Sou movido por três frentes que me guiam em todo projeto: dados, propósito e impacto.</p>
         
         <div class="cta-group">
-          <a class="btn btn-primary" href="mailto:matheus@thechosen.tv">
-            <span>Agendar Palestra</span>
-          </a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/matheushoracio/" target="_blank" rel="noopener">
-            <span>LinkedIn</span>
-          </a>
-          <a class="btn btn-outline" href="https://www.instagram.com/matheus.horacio/" target="_blank" rel="noopener">
-            <span>Instagram</span>
-          </a>
+          <a class="btn btn-primary" href="mailto:matheus@thechosen.tv">Agendar Palestra</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/matheushoracio/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/matheus.horacio/" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
 
-      <!-- IMAGEM -->
-      <div class="hero-image">
-        <img src="matheus-horacio.jpg" alt="Matheus Horácio">
+      <!-- SUA FOTO -->
+      <div class="hero-image fade-in">
+        <img src="matheus-horacio.jpg" alt="Foto de Matheus Horácio">
         <div class="badge-stats">
           <span class="number">+3M</span>
           <span class="label">Seguidores Alcançados</span>
@@ -947,498 +614,326 @@
       </div>
 
     </div>
-  </section>
+  </header>
 
   <!-- ========================================
        SEÇÃO: SOBRE MIM
   ========================================= -->
-  <section class="about">
-    <div class="about-container">
-      <h2>Quem sou eu</h2>
-      
-      <p>Olá! Eu sou o Matheus Horácio. Trabalho no digital há mais de uma década e, desde 2022, cuido do conteúdo de <a href="https://osescolhidos.tv/" target="_blank">The Chosen Brasil</a>. Criei esta página porque gosto de compartilhar conhecimento e porque, infelizmente, pra te descobrirem, você precisa aparecer.</p>
+  <main>
+    <section id="sobre" class="about section">
+      <div class="container about-container fade-in">
+        <h2>Quem sou eu</h2>
+        
+        <p>Olá! Eu sou o Matheus Horácio. Trabalho no digital há mais de uma década e, desde 2022, cuido do conteúdo de <a href="https://osescolhidos.tv/" target="_blank">The Chosen Brasil</a>. Criei esta página porque gosto de compartilhar conhecimento e porque, infelizmente, pra te descobrirem, você precisa aparecer.</p>
+        <p>Como alguém que vive o mercado digital, vejo muitos projetos incríveis nascendo com as melhores intenções, mas morrendo por falta de uma boa estratégia tática. Acredito que boas intenções não bastam. Estratégias bem pensadas e executadas com clareza são o que transformam ideias em resultados reais.</p>
+        <p><strong>Meu jeito de fazer marketing:</strong> Gosto de unir métricas com sensibilidade editorial, performance com propósito e humor com autenticidade. Lidero equipes com clareza, propósito e aquele equilíbrio entre "vamos bater meta" e "vamos respirar também?".</p>
 
-      <p><strong>Como gestor de conteúdo</strong> do The Chosen Brasil, ajudei a série a alcançar mais de 3 milhões de seguidores e a se tornar um fenômeno digital. Liderei os lançamentos das temporadas 3, 4 e 5, sempre equilibrando propósito e performance (e muito café e deadlines).</p>
-      
-      <p>Ah, e uma curiosidade: Já conheci e gravei com a maior parte do elenco de The Chosen (conheci Jesus, João, Mateus, Judas… e sim, tive o privilégio de entrevistá-los).</p>
+        <div class="highlight-box">
+          <p>O melhor marketing não parece marketing. Parece uma conversa entre pessoas que acreditam nas mesmas coisas.</p>
+        </div>
 
-      <p>Como alguém que vive o mercado digital, vejo muitos projetos incríveis nascendo com as melhores intenções, mas morrendo por falta de uma boa estratégia tática. Acredito que boas intenções não bastam. Estratégias bem pensadas e executadas com clareza são o que transformam ideias em resultados reais. Dados importam, mas o que faz diferença é transformar números em decisões criativas.</p>
-
-      <div class="highlight-box">
-        <p>O melhor marketing não parece marketing. Parece uma conversa entre pessoas que acreditam nas mesmas coisas.</p>
+        <p><strong>Vamos conversar:</strong> Se você procura alguém que entende de ROI e também de gente, que cria campanhas multicanal sem perder leveza, ou que acredita que o marketing pode ser divertido e ainda assim estratégico, me chama pra sua igreja, escola, empresa ou projeto.</p>
       </div>
+    </section>
 
-      <p><strong>Meu jeito de fazer marketing:</strong> Gosto de unir métricas com sensibilidade editorial, performance com propósito e humor com autenticidade. Lidero equipes com clareza, propósito e aquele equilíbrio entre "vamos bater meta" e "vamos respirar também?".</p>
+    <!-- ========================================
+         SEÇÃO: MINHA JORNADA (TIMELINE)
+    ========================================= -->
+    <section id="jornada" class="journey section">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2>Minha História no The Chosen</h2>
+          <p>De fã voluntário a gestor de conteúdo. Uma jornada construída com propósito, paixão e muito trabalho.</p>
+        </header>
 
-      <p><strong>Vamos conversar:</strong> Se você procura alguém que entende de ROI e também de gente, que cria campanhas multicanal sem perder leveza, ou que acredita que o marketing pode ser divertido e ainda assim estratégico, me chama pra sua igreja, escola, empresa ou projeto.</p>
-    </div>
-  </section>
+        <div class="timeline">
+          <!-- Item 1: 2020 -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <h3>Tudo começou como fã</h3>
+              <p>Conheci The Chosen e, impactado, senti que precisava contar para todo mundo. Criei a página <strong>The Chosen Cenas</strong> como um trabalho voluntário. Foram meus pães e peixes naquele momento.</p>
+            </div>
+          </div>
+          <!-- Item 2: 2021 -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2021</span>
+              <h3>A volta com mais força</h3>
+              <p>Percebi que a série ainda não era tão popular no Brasil e voltei com a meta de criar o maior portal sobre The Chosen da América Latina. Nunca imaginei que seria contratado.</p>
+            </div>
+          </div>
+          <!-- Item 3: 2022 -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2022</span>
+              <h3>A virada: a contratação</h3>
+              <p>A equipe do The Chosen me convidou para fazer parte do time fundador no Brasil, ao lado de <strong>Diogenes Cavalcante</strong> e sob direção de <strong>Julie Molina</strong>. Com um time enxuto, nos tornamos referência.</p>
+            </div>
+          </div>
+          <!-- Item 4: Hoje -->
+          <div class="timeline-item fade-in">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">Hoje</span>
+              <h3>Gestor de Conteúdo</h3>
+              <p>Lidero um time de <strong>7 pessoas</strong>, construindo uma audiência de mais de <strong>3 milhões de seguidores</strong>. Uma jornada de liderança, estratégia e, acima de tudo, propósito.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO: ESTATÍSTICAS DE IMPACTO
+    ========================================= -->
+    <section class="stats section">
+      <div class="container stats-grid">
+        <div class="stat-item fade-in">
+          <h3>+10</h3>
+          <p>Anos no Digital</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3>+3M</h3>
+          <p>Seguidores Construídos</p>
+        </div>
+        <div class="stat-item fade-in">
+          <h3>7</h3>
+          <p>Pessoas na Equipe</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO: CARROSSEL DE FOTOS
+    ========================================= -->
+    <section class="gallery section">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2>Momentos Especiais</h2>
+          <p>Registros da jornada com The Chosen Brasil</p>
+        </header>
+
+        <div class="carousel-container fade-in">
+          <div class="carousel">
+            <div class="carousel-track">
+              <!-- FOTO 1: Substitua 'YOUR-PHOTO-1.jpg' pela sua imagem -->
+              <div class="carousel-slide active">
+                <img src="YOUR-PHOTO-1.jpg" alt="Live com Dallas Jenkins">
+                <div class="carousel-caption"><p>Live com Dallas Jenkins, criador de The Chosen</p></div>
+              </div>
+              <!-- FOTO 2: Substitua 'YOUR-PHOTO-2.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-2.jpg" alt="Encontro com elenco">
+                <div class="carousel-caption"><p>Encontro com o elenco no Brasil</p></div>
+              </div>
+              <!-- FOTO 3: Substitua 'YOUR-PHOTO-3.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-3.jpg" alt="Lançamento T4">
+                <div class="carousel-caption"><p>Lançamento da Temporada 4</p></div>
+              </div>
+              <!-- FOTO 4: Substitua 'YOUR-PHOTO-4.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-4.jpg" alt="Equipe The Chosen Brasil">
+                <div class="carousel-caption"><p>Com a equipe que faz a mágica acontecer</p></div>
+              </div>
+              <!-- FOTO 5: Substitua 'YOUR-PHOTO-5.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-5.jpg" alt="Bastidores">
+                <div class="carousel-caption"><p>Bastidores das gravações</p></div>
+              </div>
+              <!-- FOTO 6: Substitua 'YOUR-PHOTO-6.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-6.jpg" alt="Palestra">
+                <div class="carousel-caption"><p>Compartilhando conhecimento em palestras</p></div>
+              </div>
+              <!-- FOTO 7: Substitua 'YOUR-PHOTO-7.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-7.jpg" alt="Evento T5">
+                <div class="carousel-caption"><p>Celebração do lançamento da Temporada 5</p></div>
+              </div>
+              <!-- FOTO 8: Substitua 'YOUR-PHOTO-8.jpg' pela sua imagem -->
+              <div class="carousel-slide">
+                <img src="YOUR-PHOTO-8.jpg" alt="Comunidade">
+                <div class="carousel-caption"><p>Construindo comunidades com propósito</p></div>
+              </div>
+            </div>
+            <!-- BOTÕES -->
+            <button class="carousel-btn prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+            <button class="carousel-btn next" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+          </div>
+          <!-- INDICADORES -->
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO: ENTREVISTAS E VÍDEOS
+    ========================================= -->
+    <section id="videos" class="interviews section">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2>Entrevistas e Aparições</h2>
+          <p>Conversas com Dallas Jenkins, encontros com o elenco e participações nos lançamentos oficiais.</p>
+        </header>
+
+        <!-- VÍDEOS EM DESTAQUE -->
+        <div class="featured-videos">
+          <a href="https://www.youtube.com/live/VSACOxcCFQ0?t=1747" target="_blank" rel="noopener" class="featured-card fade-in">
+            <div class="featured-thumbnail"><img src="https://i.ytimg.com/vi/VSACOxcCFQ0/maxresdefault.jpg" alt="Live com Dallas Jenkins"><div class="play-overlay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="featured-info"><span class="featured-badge">Em Destaque</span><h3>Live com Dallas Jenkins</h3><p>Participação em live com o criador e diretor de The Chosen.</p></div>
+          </a>
+          <a href="https://www.instagram.com/reels/C5HRSi4qpP2/" target="_blank" rel="noopener" class="featured-card fade-in">
+            <div class="featured-thumbnail"><img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-15/440467166_826398206171866_7906819756426883989_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=i20n_R_t3n8Q7kNvgFYbXnB&_nc_ht=scontent-gru2-2.cdninstagram.com&edm=ABmJApAAAAAA&oh=00_AYB3i3uT9zYp7a_M1p3e0y6U9n5X2j4d_Q4_o7m9d_w4-Q&oe=6661C97A" alt="Encontro com elenco" onerror="this.style.display='none'"><div class="play-overlay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="featured-info"><span class="featured-badge">Em Destaque</span><h3>Encontro com o Elenco</h3><p>Momento especial com os atores de The Chosen no Brasil.</p></div>
+          </a>
+        </div>
+
+        <!-- OUTROS VÍDEOS -->
+        <div class="videos-grid">
+          <a href="https://www.youtube.com/watch?v=QbWesSc60TQ" target="_blank" rel="noopener" class="video-card fade-in">
+            <div class="video-thumbnail"><img src="https://i.ytimg.com/vi/QbWesSc60TQ/maxresdefault.jpg" alt="Entrevista Davi Viegas"><div class="play-overlay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="video-info"><h3>Davi Viegas (Tiago Menor)</h3><p>Conversa sobre o processo criativo.</p></div>
+          </a>
+          <a href="https://www.youtube.com/watch?v=CnSxRg4hOmE" target="_blank" rel="noopener" class="video-card fade-in">
+            <div class="video-thumbnail"><img src="https://i.ytimg.com/vi/CnSxRg4hOmE/maxresdefault.jpg" alt="Entrevista Noah James"><div class="play-overlay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="video-info"><h3>Noah James (André)</h3><p>Bastidores e conexão com os fãs.</p></div>
+          </a>
+          <a href="https://www.instagram.com/reels/DHHmhbQNp9h/" target="_blank" rel="noopener" class="video-card fade-in">
+            <div class="video-thumbnail"><img src="https://scontent-gru2-2.cdninstagram.com/v/t51.29350-15/470622973_18484622823027163_5841732859606638815_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=8w2y_1Tq48QQ7kNvgEaN-0m&_nc_ht=scontent-gru2-2.cdninstagram.com&edm=ABmJApAAAAAA&oh=00_AYD-pIq-7tY1gX6J_k0l3e7h_V7s3d_T5r_I6s9p_y_w-g&oe=6661D79E" alt="Bastidores" onerror="this.style.display='none'"><div class="play-overlay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="video-info"><h3>Bastidores com Elenco</h3><p>Momentos exclusivos e entrevistas.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO: APARIÇÕES EM LANÇAMENTOS
+    ========================================= -->
+    <section id="lancamentos" class="appearances section">
+      <div class="container">
+        <header class="section-header fade-in">
+          <h2>Lançamentos Oficiais</h2>
+          <p>Participações na apresentação de episódios no canal do The Chosen Brasil.</p>
+        </header>
+
+        <div class="appearances-list fade-in">
+          <!-- Item T5E2 -->
+          <a href="https://www.youtube.com/watch?v=3IoYs_j27lc" target="_blank" rel="noopener" class="appearance-item">
+            <div class="appearance-icon"><svg viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div>
+            <div class="appearance-info"><h4>Lançamento Episódio T5E2</h4><p>Apresentação oficial do episódio da Temporada 5.</p></div>
+            <span class="appearance-link">Assistir →</span>
+          </a>
+          <!-- Outros itens... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO: CHAMADA PARA AÇÃO FINAL
+    ========================================= -->
+    <section class="cta-final section">
+      <div class="container fade-in">
+        <h2>Disponível para Palestras & Workshops</h2>
+        <p>Se você busca palestras sobre marketing com propósito, gestão de comunidades ou estratégias de conteúdo que geram impacto real, minha agenda está aberta.</p>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="mailto:matheus@thechosen.tv">matheus@thechosen.tv</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/matheushoracio/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/matheus.horacio/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- ========================================
-       SEÇÃO: JORNADA (TIMELINE)
+       RODAPÉ
   ========================================= -->
-  <section class="journey">
-    <div class="section-header">
-      <h2>Minha História no The Chosen</h2>
-      <p>De fã voluntário a gestor de conteúdo. Uma jornada construída com propósito, paixão e muito trabalho.</p>
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© 2025 Matheus Horácio · Gestor de Conteúdo @ <a href="https://osescolhidos.tv/" target="_blank" rel="noopener">The Chosen Brasil</a></p>
     </div>
-
-    <div class="timeline">
-      
-      <!-- 2020 -->
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2020</span>
-          <h3>Tudo começou como fã</h3>
-          <p>Em 2020, conheci The Chosen e fiquei tão impactado com a forma humana e profunda como a série apresentava Jesus e os discípulos que eu precisava contar para todo mundo. Como sempre trabalhei no digital, me comprometi a criar algo: nasceu a página <strong>The Chosen Cenas</strong>, onde criei mais de 90 posts. Foram meus pães e peixes naquele momento. Um trabalho voluntário, movido apenas por paixão.</p>
-        </div>
-      </div>
-
-      <!-- 2021 -->
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2021</span>
-          <h3>Voltei com tudo</h3>
-          <p>Passou um ano e percebi que The Chosen ainda não havia se popularizado no Brasil como eu imaginava. Pensei: "Eu preciso voltar". E voltei com ainda mais força. Minha meta era clara: criar o maior portal sobre The Chosen da América Latina. Naquele momento, eu nunca imaginei que um dia seria contratado — pensei que no máximo me convidariam para algum evento.</p>
-        </div>
-      </div>
-
-      <!-- 2022 -->
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2022</span>
-          <h3>A virada: fui contratado</h3>
-          <p>A equipe do The Chosen me chamou e pediu para que eu fizesse parte do time fundador aqui no Brasil, ao lado de <strong>Diogenes Cavalcante</strong>, sob a direção de <strong>Julie Molina</strong>. Foi quando comecei oficialmente minha história no The Chosen Brasil. Com um time enxuto, começamos a crescer aos poucos e nos tornamos uma referência mundial.</p>
-        </div>
-      </div>
-
-      <!-- HOJE -->
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">Hoje</span>
-          <h3>Gestor de Conteúdo</h3>
-          <p>Hoje sou gestor de conteúdo e lidero um time de <strong>7 pessoas</strong>. Tenho aprendido muito nessa jornada — sobre liderança, estratégia, storytelling e, principalmente, sobre como construir comunidades com propósito. Liderei os lançamentos das Temporadas 3, 4 e 5, entrevistei grande parte do elenco e ajudei a construir uma audiência de mais de 3 milhões de seguidores.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================
-       SEÇÃO: ESTATÍSTICAS
-  ========================================= -->
-  <section class="stats">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <h3>+10</h3>
-        <p>Anos no Digital</p>
-      </div>
-      <div class="stat-item">
-        <h3>+3M</h3>
-        <p>Seguidores Construídos</p>
-      </div>
-      <div class="stat-item">
-        <h3>7</h3>
-        <p>Pessoas na Equipe</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================
-       SEÇÃO: GALERIA DE FOTOS (CARROSSEL)
-  ========================================= -->
-  <section class="gallery">
-    <div class="section-header">
-      <h2>Momentos Especiais</h2>
-      <p>Registros da jornada com The Chosen Brasil</p>
-    </div>
-
-    <div class="carousel-container">
-      <div class="carousel">
-        <div class="carousel-track">
-          
-          <!-- FOTO 1 -->
-          <div class="carousel-slide active">
-            <img src="foto1-dallas-jenkins.jpg" alt="Live com Dallas Jenkins">
-            <div class="carousel-caption">
-              <p>Live ao vivo com Dallas Jenkins, criador de The Chosen</p>
-            </div>
-          </div>
-
-          <!-- FOTO 2 -->
-          <div class="carousel-slide">
-            <img src="foto2-elenco-brasil.jpg" alt="Encontro com elenco">
-            <div class="carousel-caption">
-              <p>Encontro com o elenco durante visita ao Brasil</p>
-            </div>
-          </div>
-
-          <!-- FOTO 3 -->
-          <div class="carousel-slide">
-            <img src="foto3-lancamento-t4.jpg" alt="Lançamento T4">
-            <div class="carousel-caption">
-              <p>Lançamento oficial da Temporada 4 no Brasil</p>
-            </div>
-          </div>
-
-          <!-- FOTO 4 -->
-          <div class="carousel-slide">
-            <img src="foto4-equipe.jpg" alt="Equipe The Chosen Brasil">
-            <div class="carousel-caption">
-              <p>Time de 7 pessoas que faz a mágica acontecer</p>
-            </div>
-          </div>
-
-          <!-- FOTO 5 -->
-          <div class="carousel-slide">
-            <img src="foto5-bastidores.jpg" alt="Bastidores de gravação">
-            <div class="carousel-caption">
-              <p>Bastidores das gravações dos lançamentos</p>
-            </div>
-          </div>
-
-          <!-- FOTO 6 -->
-          <div class="carousel-slide">
-            <img src="foto6-palestra.jpg" alt="Palestra">
-            <div class="carousel-caption">
-              <p>Compartilhando conhecimento em palestras</p>
-            </div>
-          </div>
-
-          <!-- FOTO 7 -->
-          <div class="carousel-slide">
-            <img src="foto7-temporada-5.jpg" alt="Temporada 5">
-            <div class="carousel-caption">
-              <p>Lançamento da Temporada 5 - novos marcos</p>
-            </div>
-          </div>
-
-          <!-- FOTO 8 -->
-          <div class="carousel-slide">
-            <img src="foto8-comunidade.jpg" alt="Comunidade">
-            <div class="carousel-caption">
-              <p>Construindo comunidades - +3M de seguidores</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- BOTÕES NAVEGAÇÃO -->
-        <button class="carousel-btn prev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-          </svg>
-        </button>
-        <button class="carousel-btn next" aria-label="Próximo">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- DOTS -->
-      <div class="carousel-dots"></div>
-    </div>
-  </section>
-
-  <!-- ========================================
-       SEÇÃO: ENTREVISTAS
-  ========================================= -->
-  <section class="interviews">
-    <div class="section-header">
-      <h2>Entrevistas</h2>
-      <p>Conversas com Dallas Jenkins e encontros com o elenco de The Chosen.</p>
-    </div>
-
-    <!-- VÍDEOS EM DESTAQUE -->
-    <div class="featured-videos">
-      
-      <!-- DALLAS JENKINS -->
-      <a href="https://www.youtube.com/live/VSACOxcCFQ0?t=1747" target="_blank" rel="noopener" class="featured-card">
-        <div class="featured-thumbnail">
-          <img src="https://i.ytimg.com/vi/VSACOxcCFQ0/maxresdefault.jpg" alt="Live com Dallas Jenkins">
-          <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="featured-info">
-          <span class="featured-badge">Em Destaque</span>
-          <h3>Live com Dallas Jenkins</h3>
-          <p>Participação em live com Dallas Jenkins, criador e diretor de The Chosen.</p>
-        </div>
-      </a>
-
-      <!-- ELENCO NO BRASIL -->
-      <a href="https://www.instagram.com/reels/C5HRSi4qpP2/" target="_blank" rel="noopener" class="featured-card">
-        <div class="featured-thumbnail">
-          <img src="https://scontent.cdninstagram.com/v/t51.29350-15/440467166_826398206171866_7906819756426883989_n.jpg" alt="Encontro com elenco" onerror="this.src='https://via.placeholder.com/1280x720/0d1f2d/c5b8a0?text=The+Chosen+Brasil'">
-          <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="featured-info">
-          <span class="featured-badge">Em Destaque</span>
-          <h3>Encontro com o Elenco</h3>
-          <p>Momento especial com os atores de The Chosen no Brasil.</p>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- OUTRAS ENTREVISTAS -->
-    <div class="videos-grid">
-      
-      <!-- DAVI VIEGAS -->
-      <a href="https://www.youtube.com/watch?v=QbWesSc60TQ" target="_blank" rel="noopener" class="video-card">
-        <div class="video-thumbnail">
-          <img src="https://i.ytimg.com/vi/QbWesSc60TQ/maxresdefault.jpg" alt="Entrevista Davi Viegas">
-          <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="video-info">
-          <h3>Davi Viegas (Tiago Menor)</h3>
-          <p>Conversa sobre o processo criativo e desafios.</p>
-        </div>
-      </a>
-
-      <!-- NOAH JAMES -->
-      <a href="https://www.youtube.com/watch?v=CnSxRg4hOmE" target="_blank" rel="noopener" class="video-card">
-        <div class="video-thumbnail">
-          <img src="https://i.ytimg.com/vi/CnSxRg4hOmE/maxresdefault.jpg" alt="Entrevista Noah James">
-          <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="video-info">
-          <h3>Noah James (André)</h3>
-          <p>Bastidores e conexão com fãs brasileiros.</p>
-        </div>
-      </a>
-
-      <!-- BASTIDORES -->
-      <a href="https://www.instagram.com/reels/DHHmhbQNp9h/" target="_blank" rel="noopener" class="video-card">
-        <div class="video-thumbnail">
-          <img src="https://scontent.cdninstagram.com/v/t51.29350-15/470622973_18484622823027163_5841732859606638815_n.jpg" alt="Bastidores" onerror="this.src='https://via.placeholder.com/1280x720/0d1f2d/c5b8a0?text=The+Chosen+Brasil'">
-          <div class="play-overlay">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="video-info">
-          <h3>Bastidores com Elenco</h3>
-          <p>Momentos exclusivos e entrevistas rápidas.</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ========================================
-       SEÇÃO: APARIÇÕES EM VÍDEOS
-  ========================================= -->
-  <section class="appearances">
-    <div class="section-header">
-      <h2>Lançamentos Oficiais</h2>
-      <p>Apresentações de episódios no canal oficial do The Chosen Brasil.</p>
-    </div>
-
-    <div class="appearances-list">
-      
-      <!-- LANÇAMENTO T5E2 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento Episódio T5E2</h4>
-          <p>Apresentação oficial do episódio da Temporada 5</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=3IoYs_j27lc" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- LANÇAMENTO T4 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento Temporada 4</h4>
-          <p>Evento oficial de lançamento da quarta temporada</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=SnhONwzBzQs" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- T4E3 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento T4E3</h4>
-          <p>Apresentação do episódio 3 da Temporada 4</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=NPWvOj154_U" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- T4E4 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento T4E4</h4>
-          <p>Apresentação do episódio 4 da Temporada 4</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=HZ3A8AwvM9Y" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- T4E5 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento T4E5</h4>
-          <p>Apresentação do episódio 5 da Temporada 4</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=__hT08jH9Vo" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- T4E6 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento T4E6</h4>
-          <p>Apresentação do episódio 6 da Temporada 4</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=KupZTi_FgWQ" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- T4E7 -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento T4E7</h4>
-          <p>Apresentação do episódio 7 da Temporada 4</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=KhwbVRyA9xc" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-      <!-- T4E8 FINALE -->
-      <div class="appearance-item">
-        <div class="appearance-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <div class="appearance-info">
-          <h4>Lançamento T4E8 (Finale)</h4>
-          <p>Apresentação do episódio final da Temporada 4</p>
-        </div>
-        <a href="https://www.youtube.com/watch?v=WM1v1LlC8-4" target="_blank" rel="noopener" class="appearance-link">Assistir →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================
-       SEÇÃO: CTA FINAL
-  ========================================= -->
-  <section class="cta-final">
-    <h2>Disponível para Palestras & Workshops</h2>
-    <p>Se você busca palestras sobre marketing com propósito, gestão de comunidades ou estratégias de conteúdo que geram impacto real, minha agenda está aberta.</p>
-    
-    <div class="cta-buttons">
-      <a class="btn btn-primary" href="mailto:matheus@thechosen.tv">
-        <span>matheus@thechosen.tv</span>
-      </a>
-      <a class="btn btn-outline" href="https://www.linkedin.com/in/matheushoracio/" target="_blank" rel="noopener">
-        <span>LinkedIn</span>
-      </a>
-      <a class="btn btn-outline" href="https://www.instagram.com/matheus.horacio/" target="_blank" rel="noopener">
-        <span>Instagram</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ========================================
-       FOOTER
-  ========================================= -->
-  <footer>
-    <p>© 2025 Matheus Horácio · Gestor de Conteúdo @ <a href="https://osescolhidos.tv/" target="_blank" rel="noopener">The Chosen Brasil</a></p>
   </footer>
 
   <!-- ========================================
-       JAVASCRIPT: CARROSSEL
+       JAVASCRIPT (CARROSSEL E ANIMAÇÕES)
   ========================================= -->
   <script>
-  (function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dotsContainer = document.querySelector('.carousel-dots');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
+    // Função auto-executável para não poluir o escopo global
+    (function() {
+      /**
+       * LÓGICA DO CARROSSEL
+       */
+      const carouselTrack = document.querySelector('.carousel-track');
+      if (carouselTrack) {
+        const slides = Array.from(carouselTrack.children);
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
 
-    // Criar dots
-    slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('carousel-dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
+        // Cria os 'dots' de navegação
+        slides.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.classList.add('carousel-dot');
+          dot.setAttribute('aria-label', `Ir para slide ${index + 1}`);
+          if (index === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(index));
+          dotsContainer.appendChild(dot);
+        });
 
-    const dots = document.querySelectorAll('.carousel-dot');
+        const dots = Array.from(dotsContainer.children);
 
-    function updateCarousel() {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentSlide);
+        const updateCarousel = () => {
+          slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+          });
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+          });
+          carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        };
+
+        const goToSlide = (n) => {
+          currentSlide = (n + totalSlides) % totalSlides; // Loop infinito
+          updateCarousel();
+        };
+
+        // Eventos dos botões
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+        
+        // Autoplay
+        let autoplay = setInterval(() => goToSlide(currentSlide + 1), 5000);
+        const carousel = document.querySelector('.carousel');
+        carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
+        carousel.addEventListener('mouseleave', () => {
+          autoplay = setInterval(() => goToSlide(currentSlide + 1), 5000);
+        });
+      }
+
+      /**
+       * LÓGICA DAS ANIMAÇÕES DE SCROLL
+       */
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Anima só uma vez
+          }
+        });
+      }, { threshold: 0.1 }); // Anima quando 10% do elemento está visível
+
+      document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
       });
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-      });
-    }
 
-    function goToSlide(n) {
-      currentSlide = n;
-      if (currentSlide >= totalSlides) currentSlide = 0;
-      if (currentSlide < 0) currentSlide = totalSlides - 1;
-      updateCarousel();
-    }
-
-    prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-    nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-
-    // Autoplay
-    let autoplay = setInterval(() => goToSlide(currentSlide + 1), 5000);
-    
-    const carousel = document.querySelector('.carousel');
-    carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
-    carousel.addEventListener('mouseleave', () => autoplay = setInterval(() => goToSlide(currentSlide + 1), 5000));
-
-    // Teclado
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
-      if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
-    });
-
-    // Touch/Swipe
-    let touchStart = 0;
-    carousel.addEventListener('touchstart', (e) => touchStart = e.changedTouches[0].screenX);
-    carousel.addEventListener('touchend', (e) => {
-      const touchEnd = e.changedTouches[0].screenX;
-      if (touchEnd < touchStart - 50) goToSlide(currentSlide + 1);
-      if (touchEnd > touchStart + 50) goToSlide(currentSlide - 1);
-    });
-  })();
+    })();
   </script>
 
 </body>
