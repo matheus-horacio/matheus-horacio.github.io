@@ -173,34 +173,57 @@
 }
 
 @media (max-width: 968px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+  
   .navbar-toggle {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    min-width: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar-toggle span {
+    width: 26px;
+    height: 3px;
   }
 
   .navbar-menu {
     position: fixed;
-    top: 50px;  /* ← AJUSTADO PARA MENU MENOR */
+    top: 52px;
     left: 0;
     right: 0;
     background: rgba(38, 38, 38, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
     gap: 0;
-    padding: 20px;  /* ← MENOR */
+    padding: 0;  /* ← MUDOU: 20px → 0 */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: none;  /* ← ADICIONADO: Remove sombra quando fechado */
+    opacity: 0;  /* ← ADICIONADO: Invisível quando fechado */
+    visibility: hidden;  /* ← ADICIONADO: Oculta completamente */
   }
 
   .navbar-menu.active {
     max-height: 600px;
+    padding: 20px;  /* ← Padding só quando aberto */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    opacity: 1;  /* ← ADICIONADO: Visível quando aberto */
+    visibility: visible;  /* ← ADICIONADO: Mostra quando aberto */
   }
 
   .navbar-menu li {
     width: 100%;
     text-align: center;
-    padding: 12px 0;  /* ← MENOR */
+    padding: 14px 0;
     border-bottom: 1px solid rgba(1, 184, 175, 0.2);
   }
 
@@ -209,7 +232,7 @@
   }
 
   .navbar-menu a {
-    font-size: 1rem;  /* ← AJUSTADO */
+    font-size: 1.0625rem;
   }
 }
 
