@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Primeiro Artigo - Matheus Horácio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+<style>
+:root {
+  --cerulean: #01B8AF;
+  --salt: #F0F0F0;
+  --dark-grey: #262626;
+  --light-grey: #58595B;
+  --black: #000000;
+  --white: #FFFFFF;
+  --bg-light: #FAFAFA;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark-grey);
+  background: var(--bg-light);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header do Post */
+.blog-post-header {
+  background: linear-gradient(180deg, var(--dark-grey) 0%, #1a1a1a 100%);
+  padding: 80px 24px 60px;
+  color: var(--white);
+  text-align: center;
+  position: relative;
+}
+
+.blog-post-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(1, 184, 175, 0.1) 0%, transparent 50%);
+}
+
+.blog-post-header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.blog-post-category-badge {
+  display: inline-block;
+  background: var(--cerulean);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.blog-post-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.blog-post-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  color: var(--salt);
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Imagem Destaque */
+.blog-post-featured-image {
+  max-width: 1200px;
+  margin: -60px auto 0;
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+
+.blog-post-featured-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Conteúdo do Post */
+.blog-post-content {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 0 24px;
+  background: var(--white);
+  padding: 60px 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.blog-post-content h2 {
+  font-size: 2rem;
+  color: var(--dark-grey);
+  margin: 48px 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--cerulean);
+}
+
+.blog-post-content h3 {
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+  margin: 36px 0 20px;
+}
+
+.blog-post-content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  color: var(--dark-grey);
+}
+
+.blog-post-content strong {
+  color: var(--cerulean);
+  font-weight: 700;
+}
+
+.blog-post-content blockquote {
+  background: var(--salt);
+  border-left: 4px solid var(--cerulean);
+  padding: 32px 40px;
+  margin: 40px 0;
+  border-radius: 4px;
+}
+
+.blog-post-content blockquote p {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0;
+  color: var(--dark-grey);
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  margin: 24px 0 24px 24px;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.blog-post-content li {
+  margin-bottom: 12px;
+  padding-left: 8px;
+}
+
+.blog-post-content ul li::marker {
+  color: var(--cerulean);
+}
+
+.blog-post-content a {
+  color: var(--cerulean);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.blog-post-content a:hover {
+  color: #019a92;
+}
+
+.blog-post-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 32px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight Box */
+.highlight-box {
+  background: linear-gradient(135deg, rgba(1, 184, 175, 0.1) 0%, rgba(1, 184, 175, 0.05) 100%);
+  border: 2px solid var(--cerulean);
+  border-radius: 8px;
+  padding: 32px;
+  margin: 40px 0;
+}
+
+.highlight-box h3 {
+  color: var(--cerulean);
+  margin-top: 0;
+}
+
+/* Botão Voltar */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--cerulean);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.back-button:hover {
+  background: #019a92;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 184, 175, 0.3);
+}
+
+/* Compartilhar */
+.blog-post-share {
+  max-width: 800px;
+  margin: 60px auto 0;
+  padding: 32px 24px;
+  border-top: 2px solid var(--salt);
+  text-align: center;
+}
+
+.blog-post-share h3 {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: var(--dark-grey);
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.share-btn.twitter { background: #1DA1F2; }
+.share-btn.facebook { background: #4267B2; }
+.share-btn.linkedin { background: #0077B5; }
+.share-btn.whatsapp { background: #25D366; }
+
+/* Responsivo */
+@media (max-width: 968px) {
+  .blog-post-content {
+    padding: 40px 32px;
+  }
+  
+  .blog-post-title {
+    font-size: 2rem;
+  }
+  
+  .blog-post-meta {
+    gap: 16px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-post-header {
+    padding: 60px 16px 40px;
+  }
+  
+  .blog-post-featured-image {
+    margin-top: -40px;
+    padding: 0 16px;
+  }
+  
+  .blog-post-content {
+    margin: 60px 16px;
+    padding: 32px 24px;
+  }
+  
+  .blog-post-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .blog-post-content blockquote {
+    padding: 24px;
+  }
+  
+  .share-buttons {
+    flex-direction: column;
+  }
+  
+  .share-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header do Artigo -->
+<header class="blog-post-header">
+  <div class="blog-post-header-content">
+    <div class="blog-post-category-badge">Marketing</div>
+    <h1 class="blog-post-title">Como Gerenciamos +4M de Seguidores do The Chosen Brasil</h1>
+    <div class="blog-post-meta">
+      <span>📅 05 Dezembro 2024</span>
+      <span>⏱️ 8 min de leitura</span>
+      <span>✍️ Matheus Horácio</span>
+    </div>
+  </div>
+</header>
+
+<!-- Imagem Destaque -->
+<div class="blog-post-featured-image">
+  <img src="../images/blog/post-1.jpg" alt="Bastidores The Chosen Brasil">
+</div>
+
+<!-- Conteúdo do Artigo -->
+<article class="blog-post-content">
+  
+  <a href="../index.html#blog" class="back-button">
+    ← Voltar para o Blog
+  </a>
+
+  <!-- ESCREVA SEU ARTIGO AQUI -->
+  
+  <p>Da estratégia de conteúdo aos desafios diários, compartilho o que aprendi liderando uma das maiores comunidades digitais sobre fé no Brasil.</p>
+
+  <h2>Como Tudo Começou</h2>
+  
+  <p>Quando assumi a gestão de conteúdo do The Chosen Brasil em 2022, éramos uma pequena comunidade com menos de 100 mil seguidores. Hoje, mais de 4 milhões de pessoas acompanham a série através das nossas redes sociais.</p>
+
+  <p>Mas esse crescimento não aconteceu por acaso. Foi resultado de <strong>estratégia, consistência e muito aprendizado</strong>.</p>
+
+  <blockquote>
+    <p>"O melhor marketing não parece marketing. Parece uma conversa entre pessoas que acreditam nas mesmas coisas."</p>
+  </blockquote>
+
+  <h2>Os 3 Pilares da Nossa Estratégia</h2>
+
+  <h3>1. Conteúdo com Propósito</h3>
+  
+  <p>Cada post precisa ter um propósito claro. Não criamos conteúdo só por criar. Perguntamos sempre:</p>
+
+  <ul>
+    <li>Isso vai inspirar alguém?</li>
+    <li>Isso vai gerar conversas significativas?</li>
+    <li>Isso representa bem a mensagem da série?</li>
+  </ul>
+
+  <h3>2. Dados Guiam, Criatividade Encanta</h3>
+  
+  <p>Analisamos métricas diariamente, mas nunca deixamos os números matarem a criatividade. Os dados nos dizem <strong>o que funciona</strong>, mas a intuição editorial nos diz <strong>o que ressoa</strong>.</p>
+
+  <div class="highlight-box">
+    <h3>💡 Dica Prática</h3>
+    <p>Reserve 30 minutos toda segunda-feira para analisar as métricas da semana anterior. Identifique padrões, teste hipóteses e ajuste sua estratégia.</p>
+  </div>
+
+  <h3>3. Comunidade Acima de Tudo</h3>
+  
+  <p>Não gerenciamos seguidores. Cultivamos uma <strong>comunidade</strong>. Respondemos comentários, criamos conversas, valorizamos cada pessoa que interage com nosso conteúdo.</p>
+
+  <h2>Desafios Que Enfrentamos</h2>
+
+  <p>Nem tudo foram flores. Gerenciar uma comunidade desse tamanho traz desafios únicos:</p>
+
+  <ol>
+    <li><strong>Volume de interações:</strong> Milhares de comentários e mensagens diariamente</li>
+    <li><strong>Expectativas altas:</strong> A comunidade espera qualidade constante</li>
+    <li><strong>Lançamentos:</strong> Coordenar estreias de episódios é sempre intenso</li>
+  </ol>
+
+  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop" alt="Equipe trabalhando">
+
+  <h2>Lições Aprendidas</h2>
+
+  <p>Se eu pudesse resumir tudo que aprendi nesses anos em algumas lições, seriam estas:</p>
+
+  <blockquote>
+    <p>"Consistência vence intensidade. É melhor postar 3x por semana com qualidade do que 10x correndo."</p>
+  </blockquote>
+
+  <p>Aprendi que <strong>autenticidade é inegociável</strong>. Nossa comunidade percebe quando tentamos forçar algo que não é genuíno.</p>
+
+  <p>E, talvez mais importante: <strong>pessoas vêm pelo conteúdo, mas ficam pela conexão</strong>. Construir relacionamentos reais é o que transforma seguidores em comunidade.</p>
+
+  <h2>O Que Vem Por Aí</h2>
+
+  <p>Estamos apenas começando. Com a Temporada 5 chegando e novos projetos no horizonte, o objetivo continua o mesmo: usar as redes sociais para compartilhar histórias que transformam vidas.</p>
+
+  <p>Se você também trabalha com gestão de comunidades ou marketing digital, <a href="https://www.linkedin.com/in/matheushoracio/" target="_blank">conecte-se comigo no LinkedIn</a>. Vamos trocar experiências!</p>
+
+  <!-- Compartilhar -->
+  <div class="blog-post-share">
+    <h3>Gostou deste artigo? Compartilhe!</h3>
+    <div class="share-buttons">
+      <a href="https://twitter.com/intent/tweet?text=Como%20Gerenciamos%20+4M%20de%20Seguidores&url=https://matheushoracio.com.br/blog/artigo-1.html" target="_blank" class="share-btn twitter">Twitter</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://matheushoracio.com.br/blog/artigo-1.html" target="_blank" class="share-btn facebook">Facebook</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://matheushoracio.com.br/blog/artigo-1.html" target="_blank" class="share-btn linkedin">LinkedIn</a>
+      <a href="https://wa.me/?text=Como%20Gerenciamos%20+4M%20de%20Seguidores%20https://matheushoracio.com.br/blog/artigo-1.html" target="_blank" class="share-btn whatsapp">WhatsApp</a>
+    </div>
+  </div>
+
+</article>
+
+</body>
+</html>
