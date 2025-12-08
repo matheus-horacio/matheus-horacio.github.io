@@ -1415,6 +1415,146 @@ footer a:hover {
   color: var(--white); 
 }
 
+  /* ==========================================
+   SEÇÃO: BLOG
+========================================== */
+.blog {
+  background: var(--white);
+  padding: 80px 24px;
+}
+
+.blog-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border: 2px solid var(--cerulean);
+  background: transparent;
+  color: var(--cerulean);
+  border-radius: 24px;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--cerulean);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.blog-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(1, 184, 175, 0.2);
+  border-color: var(--cerulean);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: var(--dark-grey);
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.08);
+}
+
+.blog-card-category {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--cerulean);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.blog-card-content {
+  padding: 28px;
+}
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: var(--light-grey);
+}
+
+.blog-card-title {
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+  margin-bottom: 12px;
+  font-family: 'Lexend', sans-serif;
+  line-height: 1.3;
+}
+
+.blog-card-excerpt {
+  color: var(--light-grey);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.blog-card-read-more {
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cerulean);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 968px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==========================================
    RESPONSIVIDADE
 ========================================== */
@@ -1565,6 +1705,7 @@ footer a:hover {
       <li><a href="#galeria" data-i18n="nav-gallery">Galeria</a></li>
       <li><a href="#entrevistas" data-i18n="nav-interviews">Entrevistas</a></li>
       <li><a href="#lancamentos" data-i18n="nav-launches">Lançamentos</a></li>
+      <li><a href="#blog" data-i18n="nav-blog">Blog</a></li>
       <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
       
       <!-- SELETOR DE IDIOMAS -->
@@ -2059,6 +2200,31 @@ footer a:hover {
   </section>
 
   <!-- ==========================================
+       SEÇÃO: BLOG
+  ========================================== -->
+  <section id="blog" class="blog section">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="blog-title">Blog</h2>
+        <p data-i18n="blog-subtitle">Reflexões sobre marketing, propósito e os bastidores de The Chosen Brasil</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="blog-filters">
+        <button class="filter-btn active" data-category="todos">Todos</button>
+        <button class="filter-btn" data-category="marketing">Marketing</button>
+        <button class="filter-btn" data-category="estrategia">Estratégia</button>
+        <button class="filter-btn" data-category="bastidores">Bastidores</button>
+      </div>
+
+      <!-- Grid de Posts -->
+      <div class="blog-grid" id="blog-posts">
+        <!-- Os posts serão carregados aqui pelo JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
        SEÇÃO: CTA FINAL
   ========================================== -->
   <section id="contato" class="cta-final section">
@@ -2100,6 +2266,9 @@ const translations = {
     'nav-interviews': 'Entrevistas',
     'nav-launches': 'Lançamentos',
     'nav-contact': 'Contato',
+    'nav-blog': 'Blog',
+'blog-title': 'Blog',
+'blog-subtitle': 'Reflexões sobre marketing, propósito e os bastidores de The Chosen Brasil',
     'hero-subtitle': 'Content & Marketing Strategist',
     'hero-tagline': 'Sou movido por três frentes que me guiam em todo projeto: dados, propósito e impacto.',
     'hero-cta-talk': 'Agendar Palestra',
@@ -2522,6 +2691,88 @@ function translatePage(lang) {
     if (touchEnd > touchStart + 50) goToSlide(currentIndex - 1);
   });
 })();
+
+// ==================== BLOG SYSTEM ====================
+(function() {
+  // SEUS ARTIGOS FICAM AQUI
+  const blogPosts = [
+    {
+      id: 1,
+      title: 'Como Gerenciamos +4M de Seguidores',
+      excerpt: 'Da estratégia de conteúdo aos desafios diários, compartilho o que aprendi liderando uma das maiores comunidades digitais sobre fé no Brasil.',
+      category: 'bastidores',
+      categoryName: 'Bastidores',
+      date: '05 Dez 2024',
+      readTime: '8 min',
+      image: 'images/blog/post-1.jpg',
+      link: 'blog/artigo-1.html'
+    },
+    {
+      id: 2,
+      title: 'Marketing com Propósito: Como Unir Performance e Valores',
+      excerpt: 'O melhor marketing não parece marketing. Aprenda a criar campanhas que conectam, engajam e transformam sem perder a autenticidade.',
+      category: 'marketing',
+      categoryName: 'Marketing',
+      date: '28 Nov 2024',
+      readTime: '6 min',
+      image: 'images/blog/post-2.jpg',
+      link: 'blog/artigo-2.html'
+    },
+    {
+      id: 3,
+      title: '5 Métricas Que Todo Gestor de Conteúdo Deveria Acompanhar',
+      excerpt: 'Dados contam histórias. Descubra quais números realmente importam e como usá-los para tomar decisões estratégicas inteligentes.',
+      category: 'estrategia',
+      categoryName: 'Estratégia',
+      date: '20 Nov 2024',
+      readTime: '5 min',
+      image: 'images/blog/post-3.jpg',
+      link: 'blog/artigo-3.html'
+    }
+  ];
+
+  const blogGrid = document.getElementById('blog-posts');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+
+  // Função para renderizar posts
+  function renderPosts(category = 'todos') {
+    const filtered = category === 'todos' 
+      ? blogPosts 
+      : blogPosts.filter(post => post.category === category);
+
+    blogGrid.innerHTML = filtered.map(post => `
+      <a href="${post.link}" class="blog-card">
+        <div class="blog-card-image">
+          <img src="${post.image}" alt="${post.title}">
+          <div class="blog-card-category">${post.categoryName}</div>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <span>${post.date}</span>
+            <span>•</span>
+            <span>${post.readTime}</span>
+          </div>
+          <h3 class="blog-card-title">${post.title}</h3>
+          <p class="blog-card-excerpt">${post.excerpt}</p>
+          <span class="blog-card-read-more">Ler artigo completo →</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  // Sistema de filtros
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderPosts(btn.dataset.category);
+    });
+  });
+
+  // Renderizar posts iniciais
+  renderPosts();
+})();
+  
 </script>
 
 </body>
