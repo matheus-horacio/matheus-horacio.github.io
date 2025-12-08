@@ -1415,143 +1415,133 @@ footer a:hover {
   color: var(--white); 
 }
 
-  /* ==========================================
-   SEÇÃO: BLOG
+/* ==========================================
+   SEÇÃO: BLOG - EM BREVE
 ========================================== */
 .blog {
   background: var(--white);
   padding: 80px 24px;
 }
 
-.blog-filters {
+.coming-soon-box {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, rgba(1, 184, 175, 0.05) 0%, rgba(1, 184, 175, 0.02) 100%);
+  border: 3px solid var(--cerulean);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(1, 184, 175, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.coming-soon-content {
+  position: relative;
+  z-index: 1;
+}
+
+.coming-soon-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 32px;
+  background: linear-gradient(135deg, var(--cerulean) 0%, #019a92 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(1, 184, 175, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 12px 40px rgba(1, 184, 175, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(1, 184, 175, 0.4);
+  }
+}
+
+.coming-soon-icon svg {
+  width: 50px;
+  height: 50px;
+  fill: var(--white);
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background: var(--cerulean);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.coming-soon-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--dark-grey);
+  margin-bottom: 20px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.coming-soon-description {
+  font-size: 1.125rem;
+  color: var(--light-grey);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.coming-soon-topics {
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 50px;
 }
 
-.filter-btn {
-  padding: 10px 24px;
+.topic-tag {
+  padding: 10px 20px;
+  background: var(--white);
   border: 2px solid var(--cerulean);
-  background: transparent;
   color: var(--cerulean);
   border-radius: 24px;
   font-family: 'Lexend', sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--cerulean);
-  color: var(--white);
-  transform: translateY(-2px);
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.blog-card {
-  background: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  border: 2px solid transparent;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(1, 184, 175, 0.2);
-  border-color: var(--cerulean);
-}
-
-.blog-card-image {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  position: relative;
-  background: var(--dark-grey);
-}
-
-.blog-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.blog-card:hover .blog-card-image img {
-  transform: scale(1.08);
-}
-
-.blog-card-category {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: var(--cerulean);
-  color: var(--white);
-  padding: 6px 14px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Lexend', sans-serif;
-}
-
-.blog-card-content {
-  padding: 28px;
-}
-
-.blog-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-  font-size: 0.875rem;
-  color: var(--light-grey);
-}
-
-.blog-card-title {
-  font-size: 1.5rem;
-  color: var(--dark-grey);
-  margin-bottom: 12px;
-  font-family: 'Lexend', sans-serif;
-  line-height: 1.3;
-}
-
-.blog-card-excerpt {
-  color: var(--light-grey);
-  font-size: 1rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.blog-card-read-more {
-  font-family: 'Lexend', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--cerulean);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 968px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 640px) {
+  .coming-soon-box {
+    padding: 40px 24px;
+  }
+  
+  .coming-soon-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .topic-tag {
+    font-size: 0.75rem;
+    padding: 8px 16px;
   }
 }
 
@@ -1705,7 +1695,7 @@ footer a:hover {
       <li><a href="#galeria" data-i18n="nav-gallery">Galeria</a></li>
       <li><a href="#entrevistas" data-i18n="nav-interviews">Entrevistas</a></li>
       <li><a href="#lancamentos" data-i18n="nav-launches">Lançamentos</a></li>
-      <li><a href="#blog" data-i18n="nav-blog">Blog</a></li>
+<li><a href="#blog" data-i18n="nav-blog">Blog</a></li>
       <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
       
       <!-- SELETOR DE IDIOMAS -->
@@ -2199,28 +2189,43 @@ footer a:hover {
     </div>
   </section>
 
-  <!-- ==========================================
-       SEÇÃO: BLOG
+ <!-- ==========================================
+       SEÇÃO: BLOG - EM BREVE
   ========================================== -->
   <section id="blog" class="blog section">
     <div class="container">
       <div class="section-header">
         <h2 data-i18n="blog-title">Blog</h2>
-        <p data-i18n="blog-subtitle">Reflexões sobre marketing, propósito e os bastidores de The Chosen Brasil</p>
+        <p data-i18n="blog-subtitle">Em breve, um espaço para reflexões sobre marketing, propósito e os bastidores de The Chosen Brasil</p>
       </div>
 
-      <!-- Filtros -->
-      <div class="blog-filters">
-        <button class="filter-btn active" data-category="todos">Todos</button>
-        <button class="filter-btn" data-category="marketing">Marketing</button>
-        <button class="filter-btn" data-category="estrategia">Estratégia</button>
-        <button class="filter-btn" data-category="bastidores">Bastidores</button>
+      <div class="coming-soon-box">
+        <div class="coming-soon-content">
+          
+          <div class="coming-soon-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+          </div>
+
+          <span class="coming-soon-badge">🚀 Em Desenvolvimento</span>
+          
+          <h3 class="coming-soon-title" data-i18n="blog-coming-title">Blog em Breve</h3>
+          
+          <p class="coming-soon-description" data-i18n="blog-coming-desc">
+            Estou preparando um espaço especial para compartilhar insights, experiências e bastidores do mundo do marketing com propósito. Conteúdos práticos e reflexões que vão te ajudar a criar estratégias que realmente fazem a diferença.
+          </p>
+
+          <div class="coming-soon-topics">
+            <span class="topic-tag">📊 Estratégia</span>
+            <span class="topic-tag">💡 Marketing</span>
+            <span class="topic-tag">🎬 Bastidores</span>
+            <span class="topic-tag">🎯 Propósito</span>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Grid de Posts -->
-      <div class="blog-grid" id="blog-posts">
-        <!-- Os posts serão carregados aqui pelo JavaScript -->
-      </div>
     </div>
   </section>
 
@@ -2266,9 +2271,11 @@ const translations = {
     'nav-interviews': 'Entrevistas',
     'nav-launches': 'Lançamentos',
     'nav-contact': 'Contato',
-    'nav-blog': 'Blog',
+   'nav-blog': 'Blog',
 'blog-title': 'Blog',
-'blog-subtitle': 'Reflexões sobre marketing, propósito e os bastidores de The Chosen Brasil',
+'blog-subtitle': 'Em breve, um espaço para reflexões sobre marketing, propósito e os bastidores de The Chosen Brasil',
+'blog-coming-title': 'Blog em Breve',
+'blog-coming-desc': 'Estou preparando um espaço especial para compartilhar insights, experiências e bastidores do mundo do marketing com propósito. Conteúdos práticos e reflexões que vão te ajudar a criar estratégias que realmente fazem a diferença.',
     'hero-subtitle': 'Content & Marketing Strategist',
     'hero-tagline': 'Sou movido por três frentes que me guiam em todo projeto: dados, propósito e impacto.',
     'hero-cta-talk': 'Agendar Palestra',
@@ -2422,6 +2429,11 @@ const translations = {
     'launch-s4e78': 'The Chosen Live: Episodes 7 and 8 of Season 4',
     'watch': 'Watch →',
     'contact-title': 'Available for Talks & Workshops',
+    'nav-blog': 'Blog',
+'blog-title': 'Blog',
+'blog-subtitle': 'Coming soon, a space for reflections on marketing, purpose and behind the scenes of The Chosen Brazil',
+'blog-coming-title': 'Blog Coming Soon',
+'blog-coming-desc': 'I\'m preparing a special space to share insights, experiences and behind-the-scenes of purpose-driven marketing. Practical content and reflections to help you create strategies that truly make a difference.',
     'contact-text': 'If you\'re looking for talks on purpose-driven marketing, community management, or content strategies that generate real impact, my calendar is open.',
     'footer-text': '© 2025 Matheus Horácio · Content Manager @ <a href="https://osescolhidos.tv/" target="_blank" rel="noopener">The Chosen Brazil</a>'
   },
@@ -2507,6 +2519,11 @@ const translations = {
     'watch': 'Ver →',
     'contact-title': 'Disponible para Charlas & Workshops',
     'contact-text': 'Si buscas charlas sobre marketing con propósito, gestión de comunidades o estrategias de contenido que generen impacto real, mi agenda está abierta.',
+    'nav-blog': 'Blog',
+'blog-title': 'Blog',
+'blog-subtitle': 'Próximamente, un espacio para reflexiones sobre marketing, propósito y los bastidores de The Chosen Brasil',
+'blog-coming-title': 'Blog Próximamente',
+'blog-coming-desc': 'Estoy preparando un espacio especial para compartir perspectivas, experiencias y bastidores del mundo del marketing con propósito. Contenidos prácticos y reflexiones que te ayudarán a crear estrategias que realmente marquen la diferencia.',
     'footer-text': '© 2025 Matheus Horácio · Gestor de Contenido @ <a href="https://osescolhidos.tv/" target="_blank" rel="noopener">The Chosen Brasil</a>'
   }
 };
