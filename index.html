@@ -2203,39 +2203,6 @@ const translations = {
     'footer-text': '© 2025 Matheus Horácio · Gestor de Conteúdo @ <a href="https://osescolhidos.tv/" target="_blank" rel="noopener">The Chosen Brasil</a>'
   }
 
-// ==================== FUNÇÃO DE TRADUÇÃO (CORRIGIDA) ====================
-function translatePage(lang) {
-  // Traduzir todos os elementos com data-i18n
-  const elements = document.querySelectorAll('[data-i18n]');
-  elements.forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
-      // Se contém HTML (tags), usar innerHTML
-      if (translations[lang][key].includes('<')) {
-        el.innerHTML = translations[lang][key];
-      } else {
-        el.textContent = translations[lang][key];
-      }
-    }
-  });
-  
-  // Atualizar o título da página
-  if (translations[lang] && translations[lang]['page-title']) {
-    document.title = translations[lang]['page-title'];
-  }
-  
-  // Atualizar atributo lang do HTML
-  document.documentElement.lang = lang === 'pt' ? 'pt-br' : lang;
-  
-  // Salvar preferência
-  localStorage.setItem('preferred-language', lang);
-  
-  // Atualizar selecionado no dropdown
-  document.querySelectorAll('.language-option').forEach(opt => {
-    opt.classList.toggle('selected', opt.getAttribute('data-lang') === lang);
-  });
-}
-
 // ==================== MENU MOBILE ====================
 (function() {
   const toggle = document.querySelector('.navbar-toggle');
