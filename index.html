@@ -526,10 +526,8 @@ const SITE = {
     email:      "MatheusHoracio.Contato@gmail.com",
     linkedIn:   "https://www.linkedin.com/in/matheushoracio/",
     instagram:  "https://www.instagram.com/matheus.horacio/",
-    fotoHero: "matheus-horacio.jpg",
-    fotoHeroAlt: "Matheus Horácio",
-    fotoSobre: "foto1.jpg",
-    fotoSobreAlt: "Matheus Horácio",
+    foto:       "foto1.jpg",
+    fotoAlt:    "Matheus Horácio",
     empresa:    "The Chosen Brasil",
     empresaURL: "https://osescolhidos.tv/",
     anoFooter:  "2026",
@@ -871,11 +869,9 @@ document.getElementById('hero-overline').textContent = SITE.hero.overline;
 document.getElementById('hero-tagline').textContent  = SITE.hero.tagline;
 document.getElementById('hero-name').innerHTML = SITE.perfil.nome.split(' ').map((w,i) => i===1?`<span>${w}</span>`:w).join(' ');
 const hf = document.getElementById('hero-foto');
-const hf = document.getElementById('hero-foto');
-hf.src = SITE.perfil.fotoHero;
-hf.alt = SITE.perfil.fotoHeroAlt;
-document.getElementById('about-foto').src = SITE.perfil.fotoSobre;
-document.getElementById('about-foto').alt = SITE.perfil.fotoSobreAlt;
+hf.src = SITE.perfil.foto; hf.alt = SITE.perfil.fotoAlt;
+document.getElementById('about-foto').src = SITE.perfil.foto;
+document.getElementById('about-foto').alt = SITE.perfil.fotoAlt;
 document.getElementById('hero-actions').innerHTML = `
   <a class="btn btn--teal"  href="mailto:${SITE.perfil.email}">${SITE.hero.botaoPrincipal}</a>
   <a class="btn btn--ghost" href="${SITE.perfil.linkedIn}" target="_blank" rel="noopener">LinkedIn</a>
