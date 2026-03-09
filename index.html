@@ -264,7 +264,7 @@ a { color:inherit; }
 .carousel { position:relative; overflow:hidden; border-radius:6px; background:var(--ink); }
 .carousel-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change:transform; }
 .carousel-slide { min-width:100%; flex-shrink:0; position:relative; }
-.carousel-slide img { width:100%; height:auto; max-height:60vh; object-fit:contain; display:block; background-color:var(--ink); margin:0 auto; }
+.carousel-slide img { width:100%; height:auto; object-fit:contain; display:block; background-color:var(--ink); }
   .carousel-slide img { max-height:40vh; }
 
   .carousel-caption {
@@ -765,19 +765,21 @@ fotoSobreAlt: "Matheus Horácio",
 
   <!-- GALERIA -->
   <section id="galeria" class="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="label" style="color:rgba(1,184,175,0.8)">Galeria</span>
-        <h2 id="galeria-titulo" style="margin-top:12px;"></h2>
-        <p id="galeria-subtitulo"></p>
+   <div class="container">
+        <div class="section-header">
+          <span class="label" style="color:rgba(1,184,175,0.8)">Galeria</span>
+          <h2 id="galeria-titulo" style="margin-top:12px;"></h2>
+          <p id="galeria-subtitulo"></p>
+        </div>
       </div>
- <div class="carousel">
-  <div class="carousel-track" id="galeria-track"></div>
+      <div class="carousel">
+        <div class="carousel-track" id="galeria-track"></div>
         <button class="carousel-btn prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
         <button class="carousel-btn next" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
       </div>
-      <div class="carousel-dots" id="galeria-dots"></div>
-    </div>
+      <div class="container">
+        <div class="carousel-dots" id="galeria-dots"></div>
+      </div>
   </section>
 
   <!-- ENTREVISTAS -->
