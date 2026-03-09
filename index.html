@@ -869,9 +869,9 @@ document.getElementById('hero-overline').textContent = SITE.hero.overline;
 document.getElementById('hero-tagline').textContent  = SITE.hero.tagline;
 document.getElementById('hero-name').innerHTML = SITE.perfil.nome.split(' ').map((w,i) => i===1?`<span>${w}</span>`:w).join(' ');
 const hf = document.getElementById('hero-foto');
-hf.src = SITE.perfil.foto; hf.alt = SITE.perfil.fotoAlt;
-document.getElementById('about-foto').src = SITE.perfil.foto;
-document.getElementById('about-foto').alt = SITE.perfil.fotoAlt;
+hf.src = SITE.perfil.fotoHero; hf.alt = SITE.perfil.fotoHeroAlt;
+document.getElementById('about-foto').src = SITE.perfil.fotoSobre;
+document.getElementById('about-foto').alt = SITE.perfil.fotoSobreAlt;
 document.getElementById('hero-actions').innerHTML = `
   <a class="btn btn--teal"  href="mailto:${SITE.perfil.email}">${SITE.hero.botaoPrincipal}</a>
   <a class="btn btn--ghost" href="${SITE.perfil.linkedIn}" target="_blank" rel="noopener">LinkedIn</a>
