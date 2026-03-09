@@ -261,24 +261,13 @@ a { color:inherit; }
 .gallery .section-header { text-align:left; max-width:none; margin:0 0 48px; }
 .gallery .section-header h2 { color:var(--white); font-family:'Lexend',sans-serif; font-size:clamp(1.75rem,4vw,2.75rem); font-weight:800; letter-spacing:-0.03em; }
 .gallery .section-header p { color:rgba(255,255,255,0.45); margin-top:8px; }
-.carousel { position:relative; overflow:hidden; border-radius:6px; background:var(--ink); }
-.carousel-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change:transform; }
+.carousel { position:relative; overflow:hidden; border-radius:6px; }
+.carousel-track { display:flex; transition:transform 0.5s ease; }
 .carousel-slide { min-width:100%; flex-shrink:0; position:relative; }
-.carousel-slide img { width:100%; aspect-ratio:11/6; object-fit:cover; display:block; background-color:var(--ink); }
-.carousel-slide { min-width:100%; flex-shrink:0; position:relative; overflow:hidden; }
-
-  .carousel-caption {
-  position:absolute; bottom:0; left:0; right:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
-  padding:48px 32px 24px; color:var(--white);
-}
+.carousel-slide img { width:100%; height:auto; display:block; }
+.carousel-caption { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); padding:48px 32px 24px; color:var(--white); }
 .carousel-caption p { font-size:1rem; font-family:'Lexend',sans-serif; font-weight:500; margin:0; }
-.carousel-btn {
-  position:absolute; top:50%; transform:translateY(-50%);
-  background:rgba(1,184,175,0.9); border:none; width:48px; height:48px;
-  border-radius:50%; cursor:pointer; z-index:10;
-  display:flex; align-items:center; justify-content:center; transition:all 0.2s ease;
-}
+.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(1,184,175,0.9); border:none; width:48px; height:48px; border-radius:50%; cursor:pointer; z-index:10; display:flex; align-items:center; justify-content:center; transition:all 0.2s ease; }
 .carousel-btn:hover { background:var(--teal); transform:translateY(-50%) scale(1.08); }
 .carousel-btn svg { width:22px; height:22px; fill:var(--white); }
 .carousel-btn.prev { left:20px; }
@@ -763,7 +752,7 @@ fotoSobreAlt: "Matheus Horácio",
   </section>
 
   <!-- GALERIA -->
- <section id="galeria" class="gallery">
+<section id="galeria" class="gallery">
   <div class="container">
     <div class="section-header">
       <span class="label" style="color:rgba(1,184,175,0.8)">Galeria</span>
@@ -988,29 +977,46 @@ document.getElementById('footer-texto').innerHTML =
 })();
 
 /* ── CARROSSEL ── */
+/* ── CARROSSEL ── */
 (function(){
   const track = document.getElementById('galeria-track');
   if(!track) return;
   const slides = Array.from(track.children);
   const dotsEl = document.getElementById('galeria-dots');
-  let cur=0, tot=slides.length;
-  slides.forEach((_,i)=>{ const d=document.createElement('button'); d.className='carousel-dot'; d.setAttribute('aria-label',`Slide ${i+1}`); if(i===0)d.classList.add('active'); d.addEventListener('click',()=>goTo(i)); dotsEl.appendChild(d); });
+  let cur = 0;
+  const tot = slides.length;
+
+  slides.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'carousel-dot';
+    if(i===0) d.classList.add('active');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
   const dots = Array.from(dotsEl.children);
-function goTo(n){
-  cur=(n+tot)%tot;
-  track.style.transform=`translateX(-${cur*100}%)`;
-  dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
-}
-  document.querySelector('.carousel-btn.prev').addEventListener('click',()=>goTo(cur-1));
-  document.querySelector('.carousel-btn.next').addEventListener('click',()=>goTo(cur+1));
-  const car=document.querySelector('.carousel');
-  let ap=setInterval(()=>goTo(cur+1),5000);
-  car.addEventListener('mouseenter',()=>clearInterval(ap));
-  car.addEventListener('mouseleave',()=>{ ap=setInterval(()=>goTo(cur+1),5000); });
-  document.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft')goTo(cur-1); if(e.key==='ArrowRight')goTo(cur+1); });
-  let ts=0;
-  car.addEventListener('touchstart',e=>{ ts=e.changedTouches[0].screenX; });
-  car.addEventListener('touchend',e=>{ const d=e.changedTouches[0].screenX-ts; if(d<-50)goTo(cur+1); if(d>50)goTo(cur-1); });
+
+  function goTo(n) {
+    cur = (n + tot) % tot;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dots.forEach((d,i) => d.classList.toggle('active', i===cur));
+  }
+
+  document.querySelector('.carousel-btn.prev').addEventListener('click', () => goTo(cur-1));
+  document.querySelector('.carousel-btn.next').addEventListener('click', () => goTo(cur+1));
+
+  let ap = setInterval(() => goTo(cur+1), 5000);
+  const car = document.querySelector('.carousel');
+  car.addEventListener('mouseenter', () => clearInterval(ap));
+  car.addEventListener('mouseleave', () => { ap = setInterval(() => goTo(cur+1), 5000); });
+
+  let ts = 0;
+  car.addEventListener('touchstart', e => { ts = e.changedTouches[0].screenX; });
+  car.addEventListener('touchend', e => {
+    const d = e.changedTouches[0].screenX - ts;
+    if(d < -50) goTo(cur+1);
+    if(d > 50) goTo(cur-1);
+  });
 })();
 </script>
 </body>
