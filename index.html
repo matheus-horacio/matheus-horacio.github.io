@@ -264,8 +264,7 @@ a { color:inherit; }
 .carousel { position:relative; overflow:hidden; border-radius:6px; background:var(--ink); }
 .carousel-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change:transform; }
 .carousel-slide { min-width:100%; flex-shrink:0; position:relative; }
-.carousel-slide img { width:100%; height:auto; object-fit:contain; display:block; background-color:var(--ink); }
-  .carousel-slide img { max-height:40vh; }
+.carousel-slide img { width:100%; aspect-ratio:11/6; object-fit:cover; display:block; }
 
   .carousel-caption {
   position:absolute; bottom:0; left:0; right:0;
@@ -510,7 +509,6 @@ footer a:hover { color:var(--teal); }
   .hero-actions .btn { width:100%; justify-content:center; }
   .pull-quote { padding:24px 24px; }
   .container { padding:0 20px; }
-  .carousel { margin:0 -20px !important; }
 }
 </style>
 </head>
@@ -999,7 +997,11 @@ document.getElementById('footer-texto').innerHTML =
   let cur=0, tot=slides.length;
   slides.forEach((_,i)=>{ const d=document.createElement('button'); d.className='carousel-dot'; d.setAttribute('aria-label',`Slide ${i+1}`); if(i===0)d.classList.add('active'); d.addEventListener('click',()=>goTo(i)); dotsEl.appendChild(d); });
   const dots = Array.from(dotsEl.children);
-  function goTo(n){ cur=(n+tot)%tot; track.style.transform=`translateX(-${cur*100}%)`; dots.forEach((d,i)=>d.classList.toggle('active',i===cur)); }
+function goTo(n){
+  cur=(n+tot)%tot;
+  track.style.transform=`translateX(-${cur * track.parentElement.offsetWidth}px)`;
+  dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
+}
   document.querySelector('.carousel-btn.prev').addEventListener('click',()=>goTo(cur-1));
   document.querySelector('.carousel-btn.next').addEventListener('click',()=>goTo(cur+1));
   const car=document.querySelector('.carousel');
