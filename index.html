@@ -264,6 +264,7 @@ a { color:inherit; }
 .carousel { position:relative; overflow:hidden; border-radius:6px; }
 .carousel-track { display:flex; transition:transform 0.5s ease; }
 .carousel-slide { min-width:100%; flex-shrink:0; position:relative; }
+.carousel-slide { min-width:100%; flex-shrink:0; position:relative; }
 .carousel-slide img { width:100%; height:auto; display:block; }
 .carousel-caption { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); padding:48px 32px 24px; color:var(--white); }
 .carousel-caption p { font-size:1rem; font-family:'Lexend',sans-serif; font-weight:500; margin:0; }
@@ -996,11 +997,13 @@ document.getElementById('footer-texto').innerHTML =
 
   const dots = Array.from(dotsEl.children);
 
-  function goTo(n) {
-    cur = (n + tot) % tot;
-    track.style.transform = `translateX(-${cur * 100}%)`;
-    dots.forEach((d,i) => d.classList.toggle('active', i===cur));
-  }
+ function goTo(n) {
+  cur = (n + tot) % tot;
+  const w = document.querySelector('.carousel').offsetWidth;
+  track.style.transform = `translateX(-${cur * w}px)`;
+  dots.forEach((d,i) => d.classList.toggle('active', i===cur));
+}
+  window.addEventListener('resize', () => goTo(cur));
 
   document.querySelector('.carousel-btn.prev').addEventListener('click', () => goTo(cur-1));
   document.querySelector('.carousel-btn.next').addEventListener('click', () => goTo(cur+1));
