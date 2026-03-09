@@ -264,7 +264,7 @@ a { color:inherit; }
 .carousel { position:relative; overflow:hidden; border-radius:6px; background:var(--ink); }
 .carousel-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change:transform; }
 .carousel-slide { min-width:100%; flex-shrink:0; position:relative; }
-.carousel-slide img { width:100%; aspect-ratio:16/9; object-fit:cover; height:auto; display:block; background-color:var(--ink); }
+.carousel-slide img { width:100%; aspect-ratio:16/9; object-fit:contain; height:auto; display:block; background-color:var(--ink); }
   .carousel-caption {
   position:absolute; bottom:0; left:0; right:0;
   background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
@@ -526,10 +526,10 @@ const SITE = {
     email:      "MatheusHoracio.Contato@gmail.com",
     linkedIn:   "https://www.linkedin.com/in/matheushoracio/",
     instagram:  "https://www.instagram.com/matheus.horacio/",
-    fotoHero:    "matheus-horacio.jpg",
-    fotoHeroAlt: "Matheus Horácio",
-    fotoSobre:   "foto1.jpg",
-    fotoSobreAlt: "Matheus Horácio",
+    foto:    "matheus-horacio.jpg",
+fotoAlt: "Matheus Horácio",
+fotoSobre:   "foto1.jpg",
+fotoSobreAlt: "Matheus Horácio",
     empresa:    "The Chosen Brasil",
     empresaURL: "https://osescolhidos.tv/",
     anoFooter:  "2026",
@@ -871,7 +871,7 @@ document.getElementById('hero-overline').textContent = SITE.hero.overline;
 document.getElementById('hero-tagline').textContent  = SITE.hero.tagline;
 document.getElementById('hero-name').innerHTML = SITE.perfil.nome.split(' ').map((w,i) => i===1?`<span>${w}</span>`:w).join(' ');
 const hf = document.getElementById('hero-foto');
-hf.src = SITE.perfil.fotoHero; hf.alt = SITE.perfil.fotoHeroAlt;
+hf.src = SITE.perfil.foto; hf.alt = SITE.perfil.fotoAlt;
 document.getElementById('about-foto').src = SITE.perfil.fotoSobre;
 document.getElementById('about-foto').alt = SITE.perfil.fotoSobreAlt;
 document.getElementById('hero-actions').innerHTML = `
