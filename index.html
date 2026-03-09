@@ -994,12 +994,7 @@ document.getElementById('footer-texto').innerHTML =
   let cur=0, tot=slides.length;
   slides.forEach((_,i)=>{ const d=document.createElement('button'); d.className='carousel-dot'; d.setAttribute('aria-label',`Slide ${i+1}`); if(i===0)d.classList.add('active'); d.addEventListener('click',()=>goTo(i)); dotsEl.appendChild(d); });
   const dots = Array.from(dotsEl.children);
- function goTo(n){ cur=(n+tot)%tot; track.style.transform=`translateX(-${cur*100}%)`; dots.forEach((d,i)=>d.classList.toggle('active',i===cur)); }
-  dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
-}
-  track.style.width=`${tot*100}%`;
-slides.forEach(s=>s.style.width=`${100/tot}%`);
-  
+  function goTo(n){ cur=(n+tot)%tot; track.style.transform=`translateX(-${cur*100}%)`; dots.forEach((d,i)=>d.classList.toggle('active',i===cur)); }
   document.querySelector('.carousel-btn.prev').addEventListener('click',()=>goTo(cur-1));
   document.querySelector('.carousel-btn.next').addEventListener('click',()=>goTo(cur+1));
   const car=document.querySelector('.carousel');
